@@ -19,9 +19,9 @@ namespace Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login());
+            //Application.Run(new login());
             //Application.Run(new FrmAdmin());'
-            //Application.Run(new FrmAdminMain());
+            Application.Run(new FrmAdminMain());
             
 
 
