@@ -72,6 +72,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmMainLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainLogin.Designer.cs">
+      <DependentUpon>FrmMainLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
       <DependentUpon>FrmBienvenido.cs</DependentUpon>
     </Compile>
     <Compile Include="task\CustomLabel.cs" />
+    <EmbeddedResource Include="FrmMainLogin.resx">
+      <DependentUpon>FrmMainLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
