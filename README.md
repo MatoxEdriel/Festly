@@ -3,3 +3,6 @@
 💻 Desarrollada en Windows Forms con SQL Server y Entity Framework como ORM y bajo el patrón Modelo-Vista-Controlador (MVC) para una estructura organizada y escalable.
 
 ![image](https://github.com/user-attachments/assets/1d89c8d4-e3b1-4d06-bdb9-d3100f0a9320)
+
+
+![image](https://github.com/user-attachments/assets/b8058d30-969a-485f-914c-5c57f2221f87)
