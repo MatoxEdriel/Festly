@@ -7,5 +7,12 @@
 
 ![image](https://github.com/user-attachments/assets/1d89c8d4-e3b1-4d06-bdb9-d3100f0a9320)
 
+Registro de emprendimiento
+![image](https://github.com/user-attachments/assets/3de2f266-c781-47d5-9e34-d71104bb1486)
 
-![image](https://github.com/user-attachments/assets/b8058d30-969a-485f-914c-5c57f2221f87)
+
+Funcionalidad de organizacion de exposicion con arrastre al orden deseado 
+![image](https://github.com/user-attachments/assets/1d89c58c-922a-444d-91f4-25abf9ae4ee8)
+
+Registro de Participante 
+![image](https://github.com/user-attachments/assets/1eca68e0-40bd-441a-8d31-aba22508b8f5)
