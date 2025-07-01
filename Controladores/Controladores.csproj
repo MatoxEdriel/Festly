@@ -66,7 +66,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgendaController\AgendaController.cs" />
     <Compile Include="EmprendimientoController\EmprendimientoController.cs" />
+    <Compile Include="EventoController\EventoController.cs" />
     <Compile Include="ParticipanteController\ParticipanteController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

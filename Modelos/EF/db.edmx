@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AgendaPresentacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventoId" Type="int" />
+          <Property Name="EmprendimientoId" Type="int" />
+          <Property Name="HoraComienzo" Type="time" Precision="7" />
+          <Property Name="HoraSalida" Type="time" Precision="7" />
+          <Property Name="OrdenPresentacion" Type="int" />
+        </EntityType>
         <EntityType Name="Emprendimientos">
           <Key>
             <PropertyRef Name="Id" />
@@ -23,10 +34,10 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ubicacion" Type="nvarchar" MaxLength="150" />
           <Property Name="OrdenPresentacion" Type="int" />
-          <Property Name="EmprendimientoId" Type="int" Nullable="false" />
           <Property Name="FechaPresentacion" Type="date" Nullable="false" />
           <Property Name="HoraComienzo" Type="time" Precision="7" Nullable="false" />
           <Property Name="HoraSalida" Type="time" Precision="7" Nullable="false" />
+          <Property Name="NombreEvento" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Fotos">
           <Key>
@@ -213,17 +224,15 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <Property Name="high" Type="int" />
           <Property Name="status" Type="int" />
         </EntityType>
-        <Association Name="FK__Eventos__Emprend__25A691D2">
-          <End Role="Emprendimientos" Type="Self.Emprendimientos" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Eventos" Type="Self.Eventos" Multiplicity="*" />
+        <Association Name="FK__AgendaPre__Event__38B96646">
+          <End Role="Eventos" Type="Self.Eventos" Multiplicity="0..1" />
+          <End Role="AgendaPresentacion" Type="Self.AgendaPresentacion" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Emprendimientos">
+            <Principal Role="Eventos">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Eventos">
-              <PropertyRef Name="EmprendimientoId" />
+            <Dependent Role="AgendaPresentacion">
+              <PropertyRef Name="EventoId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -298,6 +307,7 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
         <Function Name="sp_MScleanupmergepublisher" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_MSrepl_startup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="masterModelStoreContainer">
+          <EntitySet Name="AgendaPresentacion" EntityType="Self.AgendaPresentacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Emprendimientos" EntityType="Self.Emprendimientos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Eventos" EntityType="Self.Eventos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fotos" EntityType="Self.Fotos" Schema="dbo" store:Type="Tables" />
@@ -380,9 +390,9 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
     [spt_values].[status] AS [status]
     FROM [dbo].[spt_values] AS [spt_values]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__Eventos__Emprend__25A691D2" Association="Self.FK__Eventos__Emprend__25A691D2">
-            <End Role="Emprendimientos" EntitySet="Emprendimientos" />
+          <AssociationSet Name="FK__AgendaPre__Event__38B96646" Association="Self.FK__AgendaPre__Event__38B96646">
             <End Role="Eventos" EntitySet="Eventos" />
+            <End Role="AgendaPresentacion" EntitySet="AgendaPresentacion" />
           </AssociationSet>
           <AssociationSet Name="FK__Fotos__Emprendim__2E3BD7D3" Association="Self.FK__Fotos__Emprendim__2E3BD7D3">
             <End Role="Emprendimientos" EntitySet="Emprendimientos" />
@@ -410,6 +420,18 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AgendaPresentacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventoId" Type="Int32" />
+          <Property Name="EmprendimientoId" Type="Int32" />
+          <Property Name="HoraComienzo" Type="Time" Precision="7" />
+          <Property Name="HoraSalida" Type="Time" Precision="7" />
+          <Property Name="OrdenPresentacion" Type="Int32" />
+          <NavigationProperty Name="Evento" Relationship="Self.FK__AgendaPre__Event__38B96646" FromRole="AgendaPresentacion" ToRole="Eventos" />
+        </EntityType>
         <EntityType Name="Emprendimiento">
           <Key>
             <PropertyRef Name="Id" />
@@ -420,7 +442,6 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <Property Name="Rubro" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LogoBinary" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="Eventos" Relationship="Self.FK__Eventos__Emprend__25A691D2" FromRole="Emprendimientos" ToRole="Eventos" />
           <NavigationProperty Name="Fotos" Relationship="Self.FK__Fotos__Emprendim__2E3BD7D3" FromRole="Emprendimientos" ToRole="Fotos" />
           <NavigationProperty Name="Participantes" Relationship="Self.FK__Participa__Empre__22CA2527" FromRole="Emprendimientos" ToRole="Participantes" />
           <NavigationProperty Name="Premiaciones" Relationship="Self.FK__Premiacio__Empre__2882FE7D" FromRole="Emprendimientos" ToRole="Premiaciones" />
@@ -433,11 +454,11 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ubicacion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="OrdenPresentacion" Type="Int32" />
-          <Property Name="EmprendimientoId" Type="Int32" Nullable="false" />
           <Property Name="FechaPresentacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="HoraComienzo" Type="Time" Nullable="false" Precision="7" />
           <Property Name="HoraSalida" Type="Time" Nullable="false" Precision="7" />
-          <NavigationProperty Name="Emprendimiento" Relationship="Self.FK__Eventos__Emprend__25A691D2" FromRole="Eventos" ToRole="Emprendimientos" />
+          <Property Name="NombreEvento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AgendaPresentacions" Relationship="Self.FK__AgendaPre__Event__38B96646" FromRole="Eventos" ToRole="AgendaPresentacion" />
         </EntityType>
         <EntityType Name="Foto">
           <Key>
@@ -618,17 +639,15 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <Property Name="high" Type="Int32" />
           <Property Name="status" Type="Int32" />
         </EntityType>
-        <Association Name="FK__Eventos__Emprend__25A691D2">
-          <End Role="Emprendimientos" Type="Self.Emprendimiento" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Eventos" Type="Self.Evento" Multiplicity="*" />
+        <Association Name="FK__AgendaPre__Event__38B96646">
+          <End Role="Eventos" Type="Self.Evento" Multiplicity="0..1" />
+          <End Role="AgendaPresentacion" Type="Self.AgendaPresentacion" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Emprendimientos">
+            <Principal Role="Eventos">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Eventos">
-              <PropertyRef Name="EmprendimientoId" />
+            <Dependent Role="AgendaPresentacion">
+              <PropertyRef Name="EventoId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -701,6 +720,7 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AgendaPresentacions" EntityType="Self.AgendaPresentacion" />
           <EntitySet Name="Emprendimientos" EntityType="Self.Emprendimiento" />
           <EntitySet Name="Eventos" EntityType="Self.Evento" />
           <EntitySet Name="Fotos" EntityType="Self.Foto" />
@@ -715,9 +735,9 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <EntitySet Name="spt_fallback_usg" EntityType="Self.spt_fallback_usg" />
           <EntitySet Name="spt_monitor" EntityType="Self.spt_monitor" />
           <EntitySet Name="spt_values" EntityType="Self.spt_values" />
-          <AssociationSet Name="FK__Eventos__Emprend__25A691D2" Association="Self.FK__Eventos__Emprend__25A691D2">
-            <End Role="Emprendimientos" EntitySet="Emprendimientos" />
+          <AssociationSet Name="FK__AgendaPre__Event__38B96646" Association="Self.FK__AgendaPre__Event__38B96646">
             <End Role="Eventos" EntitySet="Eventos" />
+            <End Role="AgendaPresentacion" EntitySet="AgendaPresentacions" />
           </AssociationSet>
           <AssociationSet Name="FK__Fotos__Emprendim__2E3BD7D3" Association="Self.FK__Fotos__Emprendim__2E3BD7D3">
             <End Role="Emprendimientos" EntitySet="Emprendimientos" />
@@ -748,6 +768,18 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+          <EntitySetMapping Name="AgendaPresentacions">
+            <EntityTypeMapping TypeName="masterModel.AgendaPresentacion">
+              <MappingFragment StoreEntitySet="AgendaPresentacion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EventoId" ColumnName="EventoId" />
+                <ScalarProperty Name="EmprendimientoId" ColumnName="EmprendimientoId" />
+                <ScalarProperty Name="HoraComienzo" ColumnName="HoraComienzo" />
+                <ScalarProperty Name="HoraSalida" ColumnName="HoraSalida" />
+                <ScalarProperty Name="OrdenPresentacion" ColumnName="OrdenPresentacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Emprendimientos">
             <EntityTypeMapping TypeName="masterModel.Emprendimiento">
               <MappingFragment StoreEntitySet="Emprendimientos">
@@ -766,10 +798,10 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
                 <ScalarProperty Name="OrdenPresentacion" ColumnName="OrdenPresentacion" />
-                <ScalarProperty Name="EmprendimientoId" ColumnName="EmprendimientoId" />
                 <ScalarProperty Name="FechaPresentacion" ColumnName="FechaPresentacion" />
                 <ScalarProperty Name="HoraComienzo" ColumnName="HoraComienzo" />
                 <ScalarProperty Name="HoraSalida" ColumnName="HoraSalida" />
+                <ScalarProperty Name="NombreEvento" ColumnName="NombreEvento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

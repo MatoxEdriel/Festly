@@ -68,6 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="EF\AgendaPresentacion.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\db.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,7 +128,9 @@
     <Compile Include="EF\Valoracione.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="Persistencia\AgendaRepository.cs" />
     <Compile Include="Persistencia\EmprendimientoRepository.cs" />
+    <Compile Include="Persistencia\EventoRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

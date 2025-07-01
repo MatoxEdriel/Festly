@@ -17,7 +17,6 @@ namespace Modelos.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Emprendimiento()
         {
-            this.Eventos = new HashSet<Evento>();
             this.Fotos = new HashSet<Foto>();
             this.Participantes = new HashSet<Participante>();
             this.Premiaciones = new HashSet<Premiacione>();
@@ -31,8 +30,6 @@ namespace Modelos.EF
         public string Descripcion { get; set; }
         public byte[] LogoBinary { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Evento> Eventos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Foto> Fotos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -27,6 +27,7 @@ namespace Modelos.EF
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AgendaPresentacion> AgendaPresentacions { get; set; }
         public virtual DbSet<Emprendimiento> Emprendimientos { get; set; }
         public virtual DbSet<Evento> Eventos { get; set; }
         public virtual DbSet<Foto> Fotos { get; set; }

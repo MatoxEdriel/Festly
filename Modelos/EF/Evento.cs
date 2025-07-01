@@ -14,14 +14,21 @@ namespace Modelos.EF
     
     public partial class Evento
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Evento()
+        {
+            this.AgendaPresentacions = new HashSet<AgendaPresentacion>();
+        }
+    
         public int Id { get; set; }
         public string Ubicacion { get; set; }
         public Nullable<int> OrdenPresentacion { get; set; }
-        public int EmprendimientoId { get; set; }
         public System.DateTime FechaPresentacion { get; set; }
         public System.TimeSpan HoraComienzo { get; set; }
         public System.TimeSpan HoraSalida { get; set; }
+        public string NombreEvento { get; set; }
     
-        public virtual Emprendimiento Emprendimiento { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AgendaPresentacion> AgendaPresentacions { get; set; }
     }
 }

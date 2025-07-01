@@ -10,7 +10,7 @@ namespace Modelos.Emprendimiento
 {
     public class EmprendimientoRepository
     {
-        //Saco el orm 
+
         private masterEntities _context;
 
         public EmprendimientoRepository() { 

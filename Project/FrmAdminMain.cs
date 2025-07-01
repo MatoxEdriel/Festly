@@ -10,10 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
+using Controladores.AgendaController;
 using Controladores.EmprendimientoController;
+using Controladores.EventoController;
 using Controladores.ParticipanteController;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Modelos.EF;
 using Project.task;
 
 
@@ -30,9 +33,12 @@ namespace Project
       
         private readonly ParticipanteController _participante;
         private readonly EmprendimientoController _controllerEmprendimiento;
+        private readonly AgendaController _agendaController;   
+        private readonly EventoController _eventoController;
 
 
-  
+
+
 
 
         public FrmAdminMain()
@@ -45,6 +51,12 @@ namespace Project
            
             _participante = new ParticipanteController();
             _controllerEmprendimiento = new EmprendimientoController();
+            _agendaController = new AgendaController();
+            _eventoController = new EventoController();
+
+            ImprimirTagsDeCards(pnlConfiguracion2);
+
+
             CargarEmprendimiento();
 
             //materialTabControl1.SelectedIndexChanged += materialTabControl1_SelectedIndexChanged;
@@ -69,6 +81,7 @@ namespace Project
 
             CargarEmprendimientosComoCards();
 
+            //FlowLayout de por si tiene una coleccion es decir pnlConfiguracion2.controls 
             pnlConfiguracion2.AllowDrop = true;
             pnlConfiguracion2.FlowDirection = FlowDirection.TopDown;
             pnlConfiguracion2.WrapContents = false;
@@ -117,6 +130,30 @@ namespace Project
 
 
 
+        }
+
+        private void guardarOrdenPresentacion(int evento) {
+            int orden = 1; // Empieza en 1 o 0 según tu lógica
+                           //Posiblemente explote xd
+
+            Console.WriteLine($"Cantidad de controles en pnlConfiguracion2: {pnlConfiguracion2.Controls.Count}");
+
+            foreach (Control control in pnlConfiguracion2.Controls)
+            {
+
+
+                if (control is MaterialCard card)
+                    if (card.Tag != null && int.TryParse(card.Tag.ToString(), out int emprendimientoId))
+                    {
+                        Console.WriteLine($"Emprendimiento ID: {emprendimientoId} - Orden: {orden}");
+
+                        _agendaController.actualizarOrdenPresentacion(evento, emprendimientoId, orden);
+
+                        orden++;
+                    }
+             
+                
+            }
         }
 
 
@@ -469,6 +506,18 @@ namespace Project
         }
 
 
+        private void ImprimirTagsDeCards(FlowLayoutPanel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is MaterialSkin.Controls.MaterialCard card)
+                {
+                    Console.WriteLine($"Card Tag: {card.Tag}");
+                }
+            }
+        }
+
+
         private void CargarEmprendimientosComoCards()
         {
             pnlEmprendimientos.Controls.Clear();
@@ -476,20 +525,25 @@ namespace Project
 
             var lista = _controllerEmprendimiento.ObtenerTodos();
 
+
             foreach (var emp in lista)
             {
-              
+
+                Console.WriteLine($"Cargando emprendimiento con Id: {emp.Id}");
+
                 var card = new MaterialSkin.Controls.MaterialCard
                 {
                     Width = 260,
                     Height = 75,
                     Margin = new Padding(10),
                     BackColor = Color.WhiteSmoke,
-                    Padding = new Padding(5)
+                    Padding = new Padding(5),
+                    Tag = emp.Id
                 };
 
+                
 
-
+            
 
 
 
@@ -636,6 +690,32 @@ namespace Project
 
         private void pnlConfiguracion2_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void botonGuardar_Click(object sender, EventArgs e)
+        {
+
+
+            string tituloEvento = txtTituloEvento.Text.Trim();
+            DateTime fechaExposicionEvento = fechaExposicion.Value;
+            DateTime horaInicio = dateHourIn.Value;
+            DateTime horaFin = dateHourOut.Value;
+            string ubicacion = txtUbicacion.Text.Trim();
+
+         
+            int nuevoEventoId = _eventoController.CrearEvento(tituloEvento, fechaExposicionEvento, horaInicio, horaFin, ubicacion);
+
+            if (nuevoEventoId > 0)
+            {
+                guardarOrdenPresentacion(nuevoEventoId);
+                MessageBox.Show("Evento creado correctamente con ID: " + nuevoEventoId);
+            }
+            else
+            {
+                MessageBox.Show("Error al crear el evento.");
+            }
+
 
         }
     }
