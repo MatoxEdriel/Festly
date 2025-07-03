@@ -41,6 +41,14 @@ namespace Modelos.Persistencia
         }
 
 
+        public void GuardarAgenda(AgendaPresentacion agenda)
+        {
+            _context.AgendaPresentacions.Add(agenda);
+            _context.SaveChanges();
+        }
+
+
+
 
 
     }

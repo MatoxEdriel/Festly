@@ -12,25 +12,17 @@ namespace Modelos.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class Evento
+    public partial class CategoriasPremiacion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Evento()
+        public CategoriasPremiacion()
         {
-            this.AgendaPresentacions = new HashSet<AgendaPresentacion>();
             this.PremiacionesEmprendimientoes = new HashSet<PremiacionesEmprendimiento>();
         }
     
         public int Id { get; set; }
-        public string Ubicacion { get; set; }
-        public Nullable<int> OrdenPresentacion { get; set; }
-        public System.DateTime FechaPresentacion { get; set; }
-        public System.TimeSpan HoraComienzo { get; set; }
-        public System.TimeSpan HoraSalida { get; set; }
-        public string NombreEvento { get; set; }
+        public string Nombre { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AgendaPresentacion> AgendaPresentacions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PremiacionesEmprendimiento> PremiacionesEmprendimientoes { get; set; }
     }

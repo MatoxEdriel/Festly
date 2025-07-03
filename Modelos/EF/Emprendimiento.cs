@@ -20,6 +20,7 @@ namespace Modelos.EF
             this.Fotos = new HashSet<Foto>();
             this.Participantes = new HashSet<Participante>();
             this.Premiaciones = new HashSet<Premiacione>();
+            this.PremiacionesEmprendimientoes = new HashSet<PremiacionesEmprendimiento>();
             this.Valoraciones = new HashSet<Valoracione>();
         }
     
@@ -36,6 +37,8 @@ namespace Modelos.EF
         public virtual ICollection<Participante> Participantes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Premiacione> Premiaciones { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PremiacionesEmprendimiento> PremiacionesEmprendimientoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Valoracione> Valoraciones { get; set; }
     }

@@ -28,11 +28,13 @@ namespace Modelos.EF
         }
     
         public virtual DbSet<AgendaPresentacion> AgendaPresentacions { get; set; }
+        public virtual DbSet<CategoriasPremiacion> CategoriasPremiacions { get; set; }
         public virtual DbSet<Emprendimiento> Emprendimientos { get; set; }
         public virtual DbSet<Evento> Eventos { get; set; }
         public virtual DbSet<Foto> Fotos { get; set; }
         public virtual DbSet<Participante> Participantes { get; set; }
         public virtual DbSet<Premiacione> Premiaciones { get; set; }
+        public virtual DbSet<PremiacionesEmprendimiento> PremiacionesEmprendimientoes { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<Valoracione> Valoraciones { get; set; }

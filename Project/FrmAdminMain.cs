@@ -147,7 +147,8 @@ namespace Project
                     {
                         Console.WriteLine($"Emprendimiento ID: {emprendimientoId} - Orden: {orden}");
 
-                        _agendaController.actualizarOrdenPresentacion(evento, emprendimientoId, orden);
+                        _agendaController.GuardarAgenda(evento, emprendimientoId, orden);
+                        Console.WriteLine("SI FUNCIONA");
 
                         orden++;
                     }
@@ -709,6 +710,7 @@ namespace Project
             if (nuevoEventoId > 0)
             {
                 guardarOrdenPresentacion(nuevoEventoId);
+          
                 MessageBox.Show("Evento creado correctamente con ID: " + nuevoEventoId);
             }
             else

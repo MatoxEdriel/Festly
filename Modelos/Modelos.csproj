@@ -71,6 +71,9 @@
     <Compile Include="EF\AgendaPresentacion.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\CategoriasPremiacion.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\db.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,6 +105,9 @@
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\Premiacione.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PremiacionesEmprendimiento.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\Role.cs">
