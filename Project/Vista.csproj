@@ -189,5 +189,8 @@
   <ItemGroup>
     <None Include="Resources\location.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premios2.0.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
