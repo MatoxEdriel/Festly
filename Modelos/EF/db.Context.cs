@@ -34,10 +34,12 @@ namespace Modelos.EF
         public virtual DbSet<Foto> Fotos { get; set; }
         public virtual DbSet<Participante> Participantes { get; set; }
         public virtual DbSet<Premiacione> Premiaciones { get; set; }
+        public virtual DbSet<PremiacionesCategoria> PremiacionesCategorias { get; set; }
         public virtual DbSet<PremiacionesEmprendimiento> PremiacionesEmprendimientoes { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<Valoracione> Valoraciones { get; set; }
+        public virtual DbSet<VotosPublico> VotosPublicoes { get; set; }
         public virtual DbSet<MSreplication_options> MSreplication_options { get; set; }
         public virtual DbSet<spt_fallback_db> spt_fallback_db { get; set; }
         public virtual DbSet<spt_fallback_dev> spt_fallback_dev { get; set; }

@@ -32,22 +32,27 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.pnlBienvenida = new System.Windows.Forms.Panel();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.registrarEmprendimiento = new System.Windows.Forms.TabPage();
             this.pnlEmprendimientos = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,6 +66,9 @@ namespace Project
             this.txtRubro = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtFacultad = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            this.IconoCamaraEmprendimiento = new FontAwesome.Sharp.IconPictureBox();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.registrarParticipante = new System.Windows.Forms.TabPage();
             this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -73,23 +81,36 @@ namespace Project
             this.txtCargo = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialCard8 = new MaterialSkin.Controls.MaterialCard();
+            this.iconCamara = new FontAwesome.Sharp.IconPictureBox();
+            this.imgLogoParticipante = new System.Windows.Forms.PictureBox();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Eventos = new System.Windows.Forms.TabPage();
             this.materialCard9 = new MaterialSkin.Controls.MaterialCard();
             this.pnlConfiguracion = new MaterialSkin.Controls.MaterialCard();
             this.materialCard11 = new MaterialSkin.Controls.MaterialCard();
+            this.cancelBoton = new FontAwesome.Sharp.IconButton();
+            this.botonGuardar = new FontAwesome.Sharp.IconButton();
             this.pnlConfiguracion2 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtTituloEvento = new MaterialSkin.Controls.MaterialTextBox();
             this.materialCard10 = new MaterialSkin.Controls.MaterialCard();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.txtUbicacion = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dateHourOut = new System.Windows.Forms.DateTimePicker();
             this.fechaExposicion = new System.Windows.Forms.DateTimePicker();
             this.dateHourIn = new System.Windows.Forms.DateTimePicker();
             this.pnlEmprendimientoCards = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPremiacion = new System.Windows.Forms.TabPage();
             this.materialCard12 = new MaterialSkin.Controls.MaterialCard();
+            this.materialCard13 = new MaterialSkin.Controls.MaterialCard();
+            this.txtGanadores = new MaterialSkin.Controls.MaterialLabel();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.materialCard16 = new MaterialSkin.Controls.MaterialCard();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -97,62 +118,49 @@ namespace Project
             this.Salir = new System.Windows.Forms.TabPage();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            this.IconoCamaraEmprendimiento = new FontAwesome.Sharp.IconPictureBox();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.iconCamara = new FontAwesome.Sharp.IconPictureBox();
-            this.imgLogoParticipante = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cancelBoton = new FontAwesome.Sharp.IconButton();
-            this.botonGuardar = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.materialCard13 = new MaterialSkin.Controls.MaterialCard();
-            this.materialCard14 = new MaterialSkin.Controls.MaterialCard();
-            this.materialCard15 = new MaterialSkin.Controls.MaterialCard();
-            this.materialCard16 = new MaterialSkin.Controls.MaterialCard();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
+            this.cmbCategoria = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialMultiLineTextBox21 = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.materialTabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             this.materialCard6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
             this.materialCard5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             this.materialCard4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.registrarEmprendimiento.SuspendLayout();
             this.materialCard2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableEmprendimiento)).BeginInit();
             this.materialCard3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoCamaraEmprendimiento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.registrarParticipante.SuspendLayout();
             this.materialCard7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.materialCard8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCamara)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoParticipante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Eventos.SuspendLayout();
             this.materialCard9.SuspendLayout();
             this.pnlConfiguracion.SuspendLayout();
             this.materialCard11.SuspendLayout();
             this.materialCard10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPremiacion.SuspendLayout();
             this.materialCard12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IconoCamaraEmprendimiento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCamara)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoParticipante)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.materialCard13.SuspendLayout();
+            this.materialCard16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -248,6 +256,21 @@ namespace Project
             this.materialLabel6.TabIndex = 10;
             this.materialLabel6.Text = "Exportacion";
             // 
+            // iconPictureBox5
+            // 
+            this.iconPictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
+            this.iconPictureBox5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
+            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox5.IconSize = 50;
+            this.iconPictureBox5.Location = new System.Drawing.Point(23, 40);
+            this.iconPictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(61, 50);
+            this.iconPictureBox5.TabIndex = 5;
+            this.iconPictureBox5.TabStop = false;
+            // 
             // materialCard5
             // 
             this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -289,6 +312,21 @@ namespace Project
             this.materialLabel5.Size = new System.Drawing.Size(71, 19);
             this.materialLabel5.TabIndex = 8;
             this.materialLabel5.Text = "Visualizar";
+            // 
+            // iconPictureBox4
+            // 
+            this.iconPictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
+            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.iconPictureBox4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
+            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox4.IconSize = 50;
+            this.iconPictureBox4.Location = new System.Drawing.Point(21, 40);
+            this.iconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox4.Name = "iconPictureBox4";
+            this.iconPictureBox4.Size = new System.Drawing.Size(61, 50);
+            this.iconPictureBox4.TabIndex = 5;
+            this.iconPictureBox4.TabStop = false;
             // 
             // materialCard4
             // 
@@ -332,6 +370,21 @@ namespace Project
             this.materialLabel4.TabIndex = 7;
             this.materialLabel4.Text = "Registrar \r\n";
             // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Person;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 50;
+            this.iconPictureBox2.Location = new System.Drawing.Point(19, 40);
+            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(61, 50);
+            this.iconPictureBox2.TabIndex = 5;
+            this.iconPictureBox2.TabStop = false;
+            // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -373,6 +426,21 @@ namespace Project
             this.materialLabel2.Size = new System.Drawing.Size(79, 19);
             this.materialLabel2.TabIndex = 6;
             this.materialLabel2.Text = "Registrar \r\n";
+            // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.iconPictureBox3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.IconSize = 50;
+            this.iconPictureBox3.Location = new System.Drawing.Point(17, 40);
+            this.iconPictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(61, 50);
+            this.iconPictureBox3.TabIndex = 5;
+            this.iconPictureBox3.TabStop = false;
             // 
             // registrarEmprendimiento
             // 
@@ -445,13 +513,13 @@ namespace Project
             // 
             // tableEmprendimiento
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableEmprendimiento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableEmprendimiento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.tableEmprendimiento.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tableEmprendimiento.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.tableEmprendimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -637,6 +705,40 @@ namespace Project
             this.materialCard3.Size = new System.Drawing.Size(231, 137);
             this.materialCard3.TabIndex = 0;
             this.materialCard3.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard3_Paint);
+            // 
+            // IconoCamaraEmprendimiento
+            // 
+            this.IconoCamaraEmprendimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.IconoCamaraEmprendimiento.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.IconoCamaraEmprendimiento.IconChar = FontAwesome.Sharp.IconChar.CameraRetro;
+            this.IconoCamaraEmprendimiento.IconColor = System.Drawing.Color.RoyalBlue;
+            this.IconoCamaraEmprendimiento.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.IconoCamaraEmprendimiento.IconSize = 81;
+            this.IconoCamaraEmprendimiento.Location = new System.Drawing.Point(73, 32);
+            this.IconoCamaraEmprendimiento.Name = "IconoCamaraEmprendimiento";
+            this.IconoCamaraEmprendimiento.Size = new System.Drawing.Size(82, 81);
+            this.IconoCamaraEmprendimiento.TabIndex = 1;
+            this.IconoCamaraEmprendimiento.TabStop = false;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.Location = new System.Drawing.Point(11, 11);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(209, 122);
+            this.imgLogo.TabIndex = 0;
+            this.imgLogo.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Image = global::Project.Properties.Resources.emprendimiento;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(994, 462);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // registrarParticipante
             // 
@@ -904,6 +1006,30 @@ namespace Project
             this.materialCard8.Size = new System.Drawing.Size(232, 186);
             this.materialCard8.TabIndex = 10;
             // 
+            // iconCamara
+            // 
+            this.iconCamara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.iconCamara.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.iconCamara.IconChar = FontAwesome.Sharp.IconChar.CameraRetro;
+            this.iconCamara.IconColor = System.Drawing.Color.RoyalBlue;
+            this.iconCamara.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCamara.IconSize = 81;
+            this.iconCamara.Location = new System.Drawing.Point(77, 53);
+            this.iconCamara.Name = "iconCamara";
+            this.iconCamara.Size = new System.Drawing.Size(82, 81);
+            this.iconCamara.TabIndex = 19;
+            this.iconCamara.TabStop = false;
+            // 
+            // imgLogoParticipante
+            // 
+            this.imgLogoParticipante.Location = new System.Drawing.Point(12, 11);
+            this.imgLogoParticipante.Margin = new System.Windows.Forms.Padding(2);
+            this.imgLogoParticipante.Name = "imgLogoParticipante";
+            this.imgLogoParticipante.Size = new System.Drawing.Size(209, 162);
+            this.imgLogoParticipante.TabIndex = 0;
+            this.imgLogoParticipante.TabStop = false;
+            this.imgLogoParticipante.Click += new System.EventHandler(this.imgLogoParticipante_Click);
+            // 
             // materialButton3
             // 
             this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -923,6 +1049,17 @@ namespace Project
             this.materialButton3.UseAccentColor = false;
             this.materialButton3.UseVisualStyleBackColor = true;
             this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::Project.Properties.Resources.register21;
+            this.pictureBox1.Location = new System.Drawing.Point(198, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(819, 472);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Eventos
             // 
@@ -983,6 +1120,34 @@ namespace Project
             this.materialCard11.Size = new System.Drawing.Size(395, 234);
             this.materialCard11.TabIndex = 3;
             // 
+            // cancelBoton
+            // 
+            this.cancelBoton.FlatAppearance.BorderSize = 0;
+            this.cancelBoton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBoton.IconChar = FontAwesome.Sharp.IconChar.Ban;
+            this.cancelBoton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cancelBoton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.cancelBoton.Location = new System.Drawing.Point(268, 176);
+            this.cancelBoton.Name = "cancelBoton";
+            this.cancelBoton.Size = new System.Drawing.Size(75, 52);
+            this.cancelBoton.TabIndex = 2;
+            this.cancelBoton.UseVisualStyleBackColor = true;
+            // 
+            // botonGuardar
+            // 
+            this.botonGuardar.FlatAppearance.BorderSize = 0;
+            this.botonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.botonGuardar.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
+            this.botonGuardar.IconColor = System.Drawing.Color.Green;
+            this.botonGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.botonGuardar.Location = new System.Drawing.Point(102, 176);
+            this.botonGuardar.Name = "botonGuardar";
+            this.botonGuardar.Size = new System.Drawing.Size(75, 52);
+            this.botonGuardar.TabIndex = 1;
+            this.botonGuardar.UseVisualStyleBackColor = true;
+            this.botonGuardar.Click += new System.EventHandler(this.botonGuardar_Click);
+            // 
             // pnlConfiguracion2
             // 
             this.pnlConfiguracion2.Location = new System.Drawing.Point(5, 8);
@@ -996,7 +1161,7 @@ namespace Project
             this.txtTituloEvento.AnimateReadOnly = false;
             this.txtTituloEvento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTituloEvento.Depth = 0;
-            this.txtTituloEvento.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTituloEvento.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtTituloEvento.Hint = "Nombre del Evento";
             this.txtTituloEvento.LeadingIcon = null;
             this.txtTituloEvento.Location = new System.Drawing.Point(17, 6);
@@ -1032,12 +1197,27 @@ namespace Project
             this.materialCard10.Size = new System.Drawing.Size(395, 168);
             this.materialCard10.TabIndex = 2;
             // 
+            // iconButton3
+            // 
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Flag;
+            this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 25;
+            this.iconButton3.Location = new System.Drawing.Point(132, 79);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(35, 25);
+            this.iconButton3.TabIndex = 9;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            // 
             // txtUbicacion
             // 
             this.txtUbicacion.AnimateReadOnly = false;
             this.txtUbicacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUbicacion.Depth = 0;
-            this.txtUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUbicacion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtUbicacion.Hint = "Ubicacion";
             this.txtUbicacion.LeadingIcon = null;
             this.txtUbicacion.Location = new System.Drawing.Point(17, 110);
@@ -1075,6 +1255,31 @@ namespace Project
             this.materialLabel3.TabIndex = 6;
             this.materialLabel3.Text = "Empieza:";
             this.materialLabel3.Click += new System.EventHandler(this.materialLabel3_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Stopwatch;
+            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(5, 79);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(35, 25);
+            this.iconButton1.TabIndex = 2;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox3.Image = global::Project.Properties.Resources.p1__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(268, 23);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(125, 114);
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
             // 
             // dateHourOut
             // 
@@ -1126,10 +1331,9 @@ namespace Project
             // 
             this.materialCard12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard12.Controls.Add(this.materialLabel13);
-            this.materialCard12.Controls.Add(this.iconButton2);
-            this.materialCard12.Controls.Add(this.materialCard14);
             this.materialCard12.Controls.Add(this.materialCard13);
-            this.materialCard12.Controls.Add(this.materialCard15);
+            this.materialCard12.Controls.Add(this.txtGanadores);
+            this.materialCard12.Controls.Add(this.iconButton2);
             this.materialCard12.Controls.Add(this.materialCard16);
             this.materialCard12.Controls.Add(this.pictureBox4);
             this.materialCard12.Depth = 0;
@@ -1141,6 +1345,73 @@ namespace Project
             this.materialCard12.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard12.Size = new System.Drawing.Size(1035, 489);
             this.materialCard12.TabIndex = 0;
+            // 
+            // materialCard13
+            // 
+            this.materialCard13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard13.Controls.Add(this.iconButton4);
+            this.materialCard13.Controls.Add(this.materialMultiLineTextBox21);
+            this.materialCard13.Controls.Add(this.materialComboBox1);
+            this.materialCard13.Controls.Add(this.cmbCategoria);
+            this.materialCard13.Depth = 0;
+            this.materialCard13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard13.Location = new System.Drawing.Point(17, 57);
+            this.materialCard13.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard13.Name = "materialCard13";
+            this.materialCard13.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard13.Size = new System.Drawing.Size(804, 96);
+            this.materialCard13.TabIndex = 1;
+            // 
+            // txtGanadores
+            // 
+            this.txtGanadores.AutoSize = true;
+            this.txtGanadores.Depth = 0;
+            this.txtGanadores.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtGanadores.Location = new System.Drawing.Point(35, 24);
+            this.txtGanadores.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtGanadores.Name = "txtGanadores";
+            this.txtGanadores.Size = new System.Drawing.Size(97, 19);
+            this.txtGanadores.TabIndex = 5;
+            this.txtGanadores.Text = "Premiaciones";
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.ForeColor = System.Drawing.Color.Red;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
+            this.iconButton2.IconColor = System.Drawing.Color.Red;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.Location = new System.Drawing.Point(801, 200);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(72, 53);
+            this.iconButton2.TabIndex = 4;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // materialCard16
+            // 
+            this.materialCard16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard16.Controls.Add(this.dataGridView1);
+            this.materialCard16.Depth = 0;
+            this.materialCard16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard16.Location = new System.Drawing.Point(17, 200);
+            this.materialCard16.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard16.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard16.Name = "materialCard16";
+            this.materialCard16.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard16.Size = new System.Drawing.Size(769, 269);
+            this.materialCard16.TabIndex = 3;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Project.Properties.Resources.premios2_0;
+            this.pictureBox4.Location = new System.Drawing.Point(538, 24);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(122, 29);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
             // 
             // tabPage2
             // 
@@ -1217,290 +1488,120 @@ namespace Project
             this.iconPictureBox1.TabStop = false;
             this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
-            // iconPictureBox5
-            // 
-            this.iconPictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
-            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
-            this.iconPictureBox5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
-            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox5.IconSize = 50;
-            this.iconPictureBox5.Location = new System.Drawing.Point(23, 40);
-            this.iconPictureBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox5.Name = "iconPictureBox5";
-            this.iconPictureBox5.Size = new System.Drawing.Size(61, 50);
-            this.iconPictureBox5.TabIndex = 5;
-            this.iconPictureBox5.TabStop = false;
-            // 
-            // iconPictureBox4
-            // 
-            this.iconPictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
-            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.iconPictureBox4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
-            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox4.IconSize = 50;
-            this.iconPictureBox4.Location = new System.Drawing.Point(21, 40);
-            this.iconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox4.Name = "iconPictureBox4";
-            this.iconPictureBox4.Size = new System.Drawing.Size(61, 50);
-            this.iconPictureBox4.TabIndex = 5;
-            this.iconPictureBox4.TabStop = false;
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Person;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 50;
-            this.iconPictureBox2.Location = new System.Drawing.Point(19, 40);
-            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(61, 50);
-            this.iconPictureBox2.TabIndex = 5;
-            this.iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            this.iconPictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
-            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.iconPictureBox3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(119)))), ((int)(((byte)(242)))));
-            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox3.IconSize = 50;
-            this.iconPictureBox3.Location = new System.Drawing.Point(17, 40);
-            this.iconPictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox3.Name = "iconPictureBox3";
-            this.iconPictureBox3.Size = new System.Drawing.Size(61, 50);
-            this.iconPictureBox3.TabIndex = 5;
-            this.iconPictureBox3.TabStop = false;
-            // 
-            // IconoCamaraEmprendimiento
-            // 
-            this.IconoCamaraEmprendimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.IconoCamaraEmprendimiento.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.IconoCamaraEmprendimiento.IconChar = FontAwesome.Sharp.IconChar.CameraRetro;
-            this.IconoCamaraEmprendimiento.IconColor = System.Drawing.Color.RoyalBlue;
-            this.IconoCamaraEmprendimiento.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.IconoCamaraEmprendimiento.IconSize = 81;
-            this.IconoCamaraEmprendimiento.Location = new System.Drawing.Point(73, 32);
-            this.IconoCamaraEmprendimiento.Name = "IconoCamaraEmprendimiento";
-            this.IconoCamaraEmprendimiento.Size = new System.Drawing.Size(82, 81);
-            this.IconoCamaraEmprendimiento.TabIndex = 1;
-            this.IconoCamaraEmprendimiento.TabStop = false;
-            // 
-            // imgLogo
-            // 
-            this.imgLogo.Location = new System.Drawing.Point(11, 11);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(209, 122);
-            this.imgLogo.TabIndex = 0;
-            this.imgLogo.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Image = global::Project.Properties.Resources.emprendimiento;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(994, 462);
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // iconCamara
-            // 
-            this.iconCamara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconCamara.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.iconCamara.IconChar = FontAwesome.Sharp.IconChar.CameraRetro;
-            this.iconCamara.IconColor = System.Drawing.Color.RoyalBlue;
-            this.iconCamara.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCamara.IconSize = 81;
-            this.iconCamara.Location = new System.Drawing.Point(77, 53);
-            this.iconCamara.Name = "iconCamara";
-            this.iconCamara.Size = new System.Drawing.Size(82, 81);
-            this.iconCamara.TabIndex = 19;
-            this.iconCamara.TabStop = false;
-            // 
-            // imgLogoParticipante
-            // 
-            this.imgLogoParticipante.Location = new System.Drawing.Point(12, 11);
-            this.imgLogoParticipante.Margin = new System.Windows.Forms.Padding(2);
-            this.imgLogoParticipante.Name = "imgLogoParticipante";
-            this.imgLogoParticipante.Size = new System.Drawing.Size(209, 162);
-            this.imgLogoParticipante.TabIndex = 0;
-            this.imgLogoParticipante.TabStop = false;
-            this.imgLogoParticipante.Click += new System.EventHandler(this.imgLogoParticipante_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::Project.Properties.Resources.register21;
-            this.pictureBox1.Location = new System.Drawing.Point(198, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(819, 472);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // cancelBoton
-            // 
-            this.cancelBoton.FlatAppearance.BorderSize = 0;
-            this.cancelBoton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelBoton.IconChar = FontAwesome.Sharp.IconChar.Ban;
-            this.cancelBoton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cancelBoton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.cancelBoton.Location = new System.Drawing.Point(268, 176);
-            this.cancelBoton.Name = "cancelBoton";
-            this.cancelBoton.Size = new System.Drawing.Size(75, 52);
-            this.cancelBoton.TabIndex = 2;
-            this.cancelBoton.UseVisualStyleBackColor = true;
-            // 
-            // botonGuardar
-            // 
-            this.botonGuardar.FlatAppearance.BorderSize = 0;
-            this.botonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.botonGuardar.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
-            this.botonGuardar.IconColor = System.Drawing.Color.Green;
-            this.botonGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.botonGuardar.Location = new System.Drawing.Point(102, 176);
-            this.botonGuardar.Name = "botonGuardar";
-            this.botonGuardar.Size = new System.Drawing.Size(75, 52);
-            this.botonGuardar.TabIndex = 1;
-            this.botonGuardar.UseVisualStyleBackColor = true;
-            this.botonGuardar.Click += new System.EventHandler(this.botonGuardar_Click);
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Flag;
-            this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 25;
-            this.iconButton3.Location = new System.Drawing.Point(132, 79);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(35, 25);
-            this.iconButton3.TabIndex = 9;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Stopwatch;
-            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(5, 79);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(35, 25);
-            this.iconButton1.TabIndex = 2;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Image = global::Project.Properties.Resources.p1__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(268, 23);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(125, 114);
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Project.Properties.Resources.premios2_0;
-            this.pictureBox4.Location = new System.Drawing.Point(50, 166);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(473, 228);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // materialCard13
-            // 
-            this.materialCard13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard13.Depth = 0;
-            this.materialCard13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard13.Location = new System.Drawing.Point(372, 204);
-            this.materialCard13.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard13.Name = "materialCard13";
-            this.materialCard13.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard13.Size = new System.Drawing.Size(115, 60);
-            this.materialCard13.TabIndex = 1;
-            // 
-            // materialCard14
-            // 
-            this.materialCard14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard14.Depth = 0;
-            this.materialCard14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard14.Location = new System.Drawing.Point(226, 138);
-            this.materialCard14.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard14.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard14.Name = "materialCard14";
-            this.materialCard14.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard14.Size = new System.Drawing.Size(115, 60);
-            this.materialCard14.TabIndex = 2;
-            // 
-            // materialCard15
-            // 
-            this.materialCard15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard15.Depth = 0;
-            this.materialCard15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard15.Location = new System.Drawing.Point(83, 184);
-            this.materialCard15.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard15.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard15.Name = "materialCard15";
-            this.materialCard15.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard15.Size = new System.Drawing.Size(115, 60);
-            this.materialCard15.TabIndex = 2;
-            // 
-            // materialCard16
-            // 
-            this.materialCard16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard16.Depth = 0;
-            this.materialCard16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard16.Location = new System.Drawing.Point(571, 138);
-            this.materialCard16.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard16.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard16.Name = "materialCard16";
-            this.materialCard16.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard16.Size = new System.Drawing.Size(436, 256);
-            this.materialCard16.TabIndex = 3;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.Color.Red;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
-            this.iconButton2.IconColor = System.Drawing.Color.Red;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(935, 68);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(72, 53);
-            this.iconButton2.TabIndex = 4;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            // 
             // materialLabel13
             // 
             this.materialLabel13.AutoSize = true;
             this.materialLabel13.Depth = 0;
             this.materialLabel13.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel13.Location = new System.Drawing.Point(47, 54);
+            this.materialLabel13.Location = new System.Drawing.Point(35, 167);
             this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel13.Name = "materialLabel13";
-            this.materialLabel13.Size = new System.Drawing.Size(116, 19);
-            this.materialLabel13.TabIndex = 5;
-            this.materialLabel13.Text = "materialLabel13";
+            this.materialLabel13.Size = new System.Drawing.Size(169, 19);
+            this.materialLabel13.TabIndex = 6;
+            this.materialLabel13.Text = " PremiacionesCategoria";
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.AutoResize = false;
+            this.cmbCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbCategoria.Depth = 0;
+            this.cmbCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbCategoria.DropDownHeight = 174;
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.DropDownWidth = 121;
+            this.cmbCategoria.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.IntegralHeight = false;
+            this.cmbCategoria.ItemHeight = 43;
+            this.cmbCategoria.Location = new System.Drawing.Point(21, 31);
+            this.cmbCategoria.MaxDropDownItems = 4;
+            this.cmbCategoria.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(94, 49);
+            this.cmbCategoria.StartIndex = 0;
+            this.cmbCategoria.TabIndex = 0;
+            // 
+            // materialComboBox1
+            // 
+            this.materialComboBox1.AutoResize = false;
+            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialComboBox1.Depth = 0;
+            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.materialComboBox1.DropDownHeight = 174;
+            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materialComboBox1.DropDownWidth = 121;
+            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialComboBox1.FormattingEnabled = true;
+            this.materialComboBox1.IntegralHeight = false;
+            this.materialComboBox1.ItemHeight = 43;
+            this.materialComboBox1.Location = new System.Drawing.Point(147, 31);
+            this.materialComboBox1.MaxDropDownItems = 4;
+            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialComboBox1.Name = "materialComboBox1";
+            this.materialComboBox1.Size = new System.Drawing.Size(220, 49);
+            this.materialComboBox1.StartIndex = 0;
+            this.materialComboBox1.TabIndex = 1;
+            // 
+            // materialMultiLineTextBox21
+            // 
+            this.materialMultiLineTextBox21.AnimateReadOnly = false;
+            this.materialMultiLineTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialMultiLineTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.materialMultiLineTextBox21.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.materialMultiLineTextBox21.Depth = 0;
+            this.materialMultiLineTextBox21.HideSelection = true;
+            this.materialMultiLineTextBox21.Location = new System.Drawing.Point(402, 29);
+            this.materialMultiLineTextBox21.MaxLength = 32767;
+            this.materialMultiLineTextBox21.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialMultiLineTextBox21.Name = "materialMultiLineTextBox21";
+            this.materialMultiLineTextBox21.PasswordChar = '\0';
+            this.materialMultiLineTextBox21.ReadOnly = false;
+            this.materialMultiLineTextBox21.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.materialMultiLineTextBox21.SelectedText = "";
+            this.materialMultiLineTextBox21.SelectionLength = 0;
+            this.materialMultiLineTextBox21.SelectionStart = 0;
+            this.materialMultiLineTextBox21.ShortcutsEnabled = true;
+            this.materialMultiLineTextBox21.Size = new System.Drawing.Size(250, 51);
+            this.materialMultiLineTextBox21.TabIndex = 2;
+            this.materialMultiLineTextBox21.TabStop = false;
+            this.materialMultiLineTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialMultiLineTextBox21.UseSystemPasswordChar = false;
+            this.materialMultiLineTextBox21.Click += new System.EventHandler(this.materialMultiLineTextBox21_Click);
+            // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = this.dataGridView1.BackgroundColor;
+            this.dataGridView1.Location = new System.Drawing.Point(17, 17);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(735, 235);
+            this.dataGridView1.TabIndex = 10;
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.FlatAppearance.BorderSize = 0;
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.CircleCheck;
+            this.iconButton4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.Location = new System.Drawing.Point(708, 27);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(75, 52);
+            this.iconButton4.TabIndex = 3;
+            this.iconButton4.UseVisualStyleBackColor = true;
             // 
             // FrmAdminMain
             // 
@@ -1520,45 +1621,48 @@ namespace Project
             this.Home.ResumeLayout(false);
             this.materialCard6.ResumeLayout(false);
             this.materialCard6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
             this.materialCard5.ResumeLayout(false);
             this.materialCard5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             this.materialCard4.ResumeLayout(false);
             this.materialCard4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.registrarEmprendimiento.ResumeLayout(false);
             this.registrarEmprendimiento.PerformLayout();
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableEmprendimiento)).EndInit();
             this.materialCard3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IconoCamaraEmprendimiento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.registrarParticipante.ResumeLayout(false);
             this.materialCard7.ResumeLayout(false);
             this.materialCard7.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.materialCard8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconCamara)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoParticipante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Eventos.ResumeLayout(false);
             this.materialCard9.ResumeLayout(false);
             this.pnlConfiguracion.ResumeLayout(false);
             this.materialCard11.ResumeLayout(false);
             this.materialCard10.ResumeLayout(false);
             this.materialCard10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPremiacion.ResumeLayout(false);
             this.materialCard12.ResumeLayout(false);
             this.materialCard12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IconoCamaraEmprendimiento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCamara)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoParticipante)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.materialCard13.ResumeLayout(false);
+            this.materialCard16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1646,11 +1750,15 @@ namespace Project
         private FontAwesome.Sharp.IconButton iconButton3;
         private MaterialSkin.Controls.MaterialCard materialCard12;
         private PictureBox pictureBox4;
-        private MaterialSkin.Controls.MaterialCard materialCard14;
-        private MaterialSkin.Controls.MaterialCard materialCard15;
         private MaterialSkin.Controls.MaterialCard materialCard13;
         private MaterialSkin.Controls.MaterialCard materialCard16;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private MaterialSkin.Controls.MaterialLabel txtGanadores;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
+        private MaterialSkin.Controls.MaterialComboBox cmbCategoria;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 materialMultiLineTextBox21;
+        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
+        private DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton iconButton4;
     }
 }

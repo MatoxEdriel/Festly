@@ -95,6 +95,15 @@ warning 6002: The table/view 'master.dbo.MSreplication_options' does not have a 
           <Property Name="Puesto" Type="nvarchar" MaxLength="50" />
           <Property Name="EmprendimientoId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="PremiacionesCategoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoriaId" Type="int" Nullable="false" />
+          <Property Name="EmprendimientoId" Type="int" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="255" />
+        </EntityType>
         <EntityType Name="PremiacionesEmprendimiento">
           <Key>
             <PropertyRef Name="Id" />
@@ -226,6 +235,16 @@ warning 6002: The table/view 'master.dbo.spt_monitor' does not have a primary ke
           <Property Name="Puntuacion" Type="int" />
           <Property Name="EmprendimientoId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="VotosPublico">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmprendimientoId" Type="int" Nullable="false" />
+          <Property Name="CategoriaPremiacionId" Type="int" Nullable="false" />
+          <Property Name="FechaHora" Type="datetime" />
+          <Property Name="Comentario" Type="nvarchar" MaxLength="500" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="spt_values">
@@ -292,6 +311,18 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Premiacio__Categ__5FD33367">
+          <End Role="CategoriasPremiacion" Type="Self.CategoriasPremiacion" Multiplicity="1" />
+          <End Role="PremiacionesCategoria" Type="Self.PremiacionesCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriasPremiacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PremiacionesCategoria">
+              <PropertyRef Name="CategoriaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Premiacio__Empre__2882FE7D">
           <End Role="Emprendimientos" Type="Self.Emprendimientos" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -314,6 +345,18 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PremiacionesEmprendimiento">
+              <PropertyRef Name="EmprendimientoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Premiacio__Empre__60C757A0">
+          <End Role="Emprendimientos" Type="Self.Emprendimientos" Multiplicity="1" />
+          <End Role="PremiacionesCategoria" Type="Self.PremiacionesCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emprendimientos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PremiacionesCategoria">
               <PropertyRef Name="EmprendimientoId" />
             </Dependent>
           </ReferentialConstraint>
@@ -356,6 +399,30 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__VotosPubl__Categ__546180BB">
+          <End Role="CategoriasPremiacion" Type="Self.CategoriasPremiacion" Multiplicity="1" />
+          <End Role="VotosPublico" Type="Self.VotosPublico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriasPremiacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotosPublico">
+              <PropertyRef Name="CategoriaPremiacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VotosPubl__Empre__536D5C82">
+          <End Role="Emprendimientos" Type="Self.Emprendimientos" Multiplicity="1" />
+          <End Role="VotosPublico" Type="Self.VotosPublico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emprendimientos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotosPublico">
+              <PropertyRef Name="EmprendimientoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="sp_MScleanupmergepublisher" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_MSrepl_startup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="masterModelStoreContainer">
@@ -366,10 +433,12 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <EntitySet Name="Fotos" EntityType="Self.Fotos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Participantes" EntityType="Self.Participantes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Premiaciones" EntityType="Self.Premiaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PremiacionesCategoria" EntityType="Self.PremiacionesCategoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PremiacionesEmprendimiento" EntityType="Self.PremiacionesEmprendimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Valoraciones" EntityType="Self.Valoraciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VotosPublico" EntityType="Self.VotosPublico" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MSreplication_options" EntityType="Self.MSreplication_options" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [MSreplication_options].[optname] AS [optname], 
@@ -460,6 +529,10 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
             <End Role="CategoriasPremiacion" EntitySet="CategoriasPremiacion" />
             <End Role="PremiacionesEmprendimiento" EntitySet="PremiacionesEmprendimiento" />
           </AssociationSet>
+          <AssociationSet Name="FK__Premiacio__Categ__5FD33367" Association="Self.FK__Premiacio__Categ__5FD33367">
+            <End Role="CategoriasPremiacion" EntitySet="CategoriasPremiacion" />
+            <End Role="PremiacionesCategoria" EntitySet="PremiacionesCategoria" />
+          </AssociationSet>
           <AssociationSet Name="FK__Premiacio__Empre__2882FE7D" Association="Self.FK__Premiacio__Empre__2882FE7D">
             <End Role="Emprendimientos" EntitySet="Emprendimientos" />
             <End Role="Premiaciones" EntitySet="Premiaciones" />
@@ -467,6 +540,10 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <AssociationSet Name="FK__Premiacio__Empre__4EA8A765" Association="Self.FK__Premiacio__Empre__4EA8A765">
             <End Role="Emprendimientos" EntitySet="Emprendimientos" />
             <End Role="PremiacionesEmprendimiento" EntitySet="PremiacionesEmprendimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Premiacio__Empre__60C757A0" Association="Self.FK__Premiacio__Empre__60C757A0">
+            <End Role="Emprendimientos" EntitySet="Emprendimientos" />
+            <End Role="PremiacionesCategoria" EntitySet="PremiacionesCategoria" />
           </AssociationSet>
           <AssociationSet Name="FK__Premiacio__Event__4DB4832C" Association="Self.FK__Premiacio__Event__4DB4832C">
             <End Role="Eventos" EntitySet="Eventos" />
@@ -479,6 +556,14 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <AssociationSet Name="FK__Valoracio__Empre__2B5F6B28" Association="Self.FK__Valoracio__Empre__2B5F6B28">
             <End Role="Emprendimientos" EntitySet="Emprendimientos" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotosPubl__Categ__546180BB" Association="Self.FK__VotosPubl__Categ__546180BB">
+            <End Role="CategoriasPremiacion" EntitySet="CategoriasPremiacion" />
+            <End Role="VotosPublico" EntitySet="VotosPublico" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotosPubl__Empre__536D5C82" Association="Self.FK__VotosPubl__Empre__536D5C82">
+            <End Role="Emprendimientos" EntitySet="Emprendimientos" />
+            <End Role="VotosPublico" EntitySet="VotosPublico" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -505,6 +590,8 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="PremiacionesEmprendimientoes" Relationship="Self.FK__Premiacio__Categ__4F9CCB9E" FromRole="CategoriasPremiacion" ToRole="PremiacionesEmprendimiento" />
+          <NavigationProperty Name="PremiacionesCategorias" Relationship="Self.FK__Premiacio__Categ__5FD33367" FromRole="CategoriasPremiacion" ToRole="PremiacionesCategoria" />
+          <NavigationProperty Name="VotosPublicoes" Relationship="Self.FK__VotosPubl__Categ__546180BB" FromRole="CategoriasPremiacion" ToRole="VotosPublico" />
         </EntityType>
         <EntityType Name="Emprendimiento">
           <Key>
@@ -520,7 +607,9 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <NavigationProperty Name="Participantes" Relationship="Self.FK__Participa__Empre__22CA2527" FromRole="Emprendimientos" ToRole="Participantes" />
           <NavigationProperty Name="Premiaciones" Relationship="Self.FK__Premiacio__Empre__2882FE7D" FromRole="Emprendimientos" ToRole="Premiaciones" />
           <NavigationProperty Name="PremiacionesEmprendimientoes" Relationship="Self.FK__Premiacio__Empre__4EA8A765" FromRole="Emprendimientos" ToRole="PremiacionesEmprendimiento" />
+          <NavigationProperty Name="PremiacionesCategorias" Relationship="Self.FK__Premiacio__Empre__60C757A0" FromRole="Emprendimientos" ToRole="PremiacionesCategoria" />
           <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__Empre__2B5F6B28" FromRole="Emprendimientos" ToRole="Valoraciones" />
+          <NavigationProperty Name="VotosPublicoes" Relationship="Self.FK__VotosPubl__Empre__536D5C82" FromRole="Emprendimientos" ToRole="VotosPublico" />
         </EntityType>
         <EntityType Name="Evento">
           <Key>
@@ -570,6 +659,17 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <Property Name="EmprendimientoId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Emprendimiento" Relationship="Self.FK__Premiacio__Empre__2882FE7D" FromRole="Premiaciones" ToRole="Emprendimientos" />
         </EntityType>
+        <EntityType Name="PremiacionesCategoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoriaId" Type="Int32" Nullable="false" />
+          <Property Name="EmprendimientoId" Type="Int32" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CategoriasPremiacion" Relationship="Self.FK__Premiacio__Categ__5FD33367" FromRole="PremiacionesCategoria" ToRole="CategoriasPremiacion" />
+          <NavigationProperty Name="Emprendimiento" Relationship="Self.FK__Premiacio__Empre__60C757A0" FromRole="PremiacionesCategoria" ToRole="Emprendimientos" />
+        </EntityType>
         <EntityType Name="PremiacionesEmprendimiento">
           <Key>
             <PropertyRef Name="Id" />
@@ -610,6 +710,18 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <Property Name="Puntuacion" Type="Int32" />
           <Property Name="EmprendimientoId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Emprendimiento" Relationship="Self.FK__Valoracio__Empre__2B5F6B28" FromRole="Valoraciones" ToRole="Emprendimientos" />
+        </EntityType>
+        <EntityType Name="VotosPublico">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmprendimientoId" Type="Int32" Nullable="false" />
+          <Property Name="CategoriaPremiacionId" Type="Int32" Nullable="false" />
+          <Property Name="FechaHora" Type="DateTime" Precision="3" />
+          <Property Name="Comentario" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CategoriasPremiacion" Relationship="Self.FK__VotosPubl__Categ__546180BB" FromRole="VotosPublico" ToRole="CategoriasPremiacion" />
+          <NavigationProperty Name="Emprendimiento" Relationship="Self.FK__VotosPubl__Empre__536D5C82" FromRole="VotosPublico" ToRole="Emprendimientos" />
         </EntityType>
         <EntityType Name="MSreplication_options">
           <Key>
@@ -751,6 +863,30 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Premiacio__Categ__5FD33367">
+          <End Role="CategoriasPremiacion" Type="Self.CategoriasPremiacion" Multiplicity="1" />
+          <End Role="PremiacionesCategoria" Type="Self.PremiacionesCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriasPremiacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PremiacionesCategoria">
+              <PropertyRef Name="CategoriaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VotosPubl__Categ__546180BB">
+          <End Role="CategoriasPremiacion" Type="Self.CategoriasPremiacion" Multiplicity="1" />
+          <End Role="VotosPublico" Type="Self.VotosPublico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriasPremiacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotosPublico">
+              <PropertyRef Name="CategoriaPremiacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Fotos__Emprendim__2E3BD7D3">
           <End Role="Emprendimientos" Type="Self.Emprendimiento" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -805,6 +941,18 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Premiacio__Empre__60C757A0">
+          <End Role="Emprendimientos" Type="Self.Emprendimiento" Multiplicity="1" />
+          <End Role="PremiacionesCategoria" Type="Self.PremiacionesCategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emprendimientos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PremiacionesCategoria">
+              <PropertyRef Name="EmprendimientoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Valoracio__Empre__2B5F6B28">
           <End Role="Emprendimientos" Type="Self.Emprendimiento" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -815,6 +963,18 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Valoraciones">
+              <PropertyRef Name="EmprendimientoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VotosPubl__Empre__536D5C82">
+          <End Role="Emprendimientos" Type="Self.Emprendimiento" Multiplicity="1" />
+          <End Role="VotosPublico" Type="Self.VotosPublico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emprendimientos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotosPublico">
               <PropertyRef Name="EmprendimientoId" />
             </Dependent>
           </ReferentialConstraint>
@@ -851,10 +1011,12 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <EntitySet Name="Fotos" EntityType="Self.Foto" />
           <EntitySet Name="Participantes" EntityType="Self.Participante" />
           <EntitySet Name="Premiaciones" EntityType="Self.Premiacione" />
+          <EntitySet Name="PremiacionesCategorias" EntityType="Self.PremiacionesCategoria" />
           <EntitySet Name="PremiacionesEmprendimientoes" EntityType="Self.PremiacionesEmprendimiento" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
           <EntitySet Name="Valoraciones" EntityType="Self.Valoracione" />
+          <EntitySet Name="VotosPublicoes" EntityType="Self.VotosPublico" />
           <EntitySet Name="MSreplication_options" EntityType="Self.MSreplication_options" />
           <EntitySet Name="spt_fallback_db" EntityType="Self.spt_fallback_db" />
           <EntitySet Name="spt_fallback_dev" EntityType="Self.spt_fallback_dev" />
@@ -868,6 +1030,14 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
           <AssociationSet Name="FK__Premiacio__Categ__4F9CCB9E" Association="Self.FK__Premiacio__Categ__4F9CCB9E">
             <End Role="CategoriasPremiacion" EntitySet="CategoriasPremiacions" />
             <End Role="PremiacionesEmprendimiento" EntitySet="PremiacionesEmprendimientoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Premiacio__Categ__5FD33367" Association="Self.FK__Premiacio__Categ__5FD33367">
+            <End Role="CategoriasPremiacion" EntitySet="CategoriasPremiacions" />
+            <End Role="PremiacionesCategoria" EntitySet="PremiacionesCategorias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotosPubl__Categ__546180BB" Association="Self.FK__VotosPubl__Categ__546180BB">
+            <End Role="CategoriasPremiacion" EntitySet="CategoriasPremiacions" />
+            <End Role="VotosPublico" EntitySet="VotosPublicoes" />
           </AssociationSet>
           <AssociationSet Name="FK__Fotos__Emprendim__2E3BD7D3" Association="Self.FK__Fotos__Emprendim__2E3BD7D3">
             <End Role="Emprendimientos" EntitySet="Emprendimientos" />
@@ -885,9 +1055,17 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
             <End Role="Emprendimientos" EntitySet="Emprendimientos" />
             <End Role="PremiacionesEmprendimiento" EntitySet="PremiacionesEmprendimientoes" />
           </AssociationSet>
+          <AssociationSet Name="FK__Premiacio__Empre__60C757A0" Association="Self.FK__Premiacio__Empre__60C757A0">
+            <End Role="Emprendimientos" EntitySet="Emprendimientos" />
+            <End Role="PremiacionesCategoria" EntitySet="PremiacionesCategorias" />
+          </AssociationSet>
           <AssociationSet Name="FK__Valoracio__Empre__2B5F6B28" Association="Self.FK__Valoracio__Empre__2B5F6B28">
             <End Role="Emprendimientos" EntitySet="Emprendimientos" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotosPubl__Empre__536D5C82" Association="Self.FK__VotosPubl__Empre__536D5C82">
+            <End Role="Emprendimientos" EntitySet="Emprendimientos" />
+            <End Role="VotosPublico" EntitySet="VotosPublicoes" />
           </AssociationSet>
           <AssociationSet Name="FK__Premiacio__Event__4DB4832C" Association="Self.FK__Premiacio__Event__4DB4832C">
             <End Role="Eventos" EntitySet="Eventos" />
@@ -985,6 +1163,16 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PremiacionesCategorias">
+            <EntityTypeMapping TypeName="masterModel.PremiacionesCategoria">
+              <MappingFragment StoreEntitySet="PremiacionesCategoria">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
+                <ScalarProperty Name="EmprendimientoId" ColumnName="EmprendimientoId" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="PremiacionesEmprendimientoes">
             <EntityTypeMapping TypeName="masterModel.PremiacionesEmprendimiento">
               <MappingFragment StoreEntitySet="PremiacionesEmprendimiento">
@@ -1021,6 +1209,17 @@ warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key
                 <ScalarProperty Name="Comentario" ColumnName="Comentario" />
                 <ScalarProperty Name="Puntuacion" ColumnName="Puntuacion" />
                 <ScalarProperty Name="EmprendimientoId" ColumnName="EmprendimientoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VotosPublicoes">
+            <EntityTypeMapping TypeName="masterModel.VotosPublico">
+              <MappingFragment StoreEntitySet="VotosPublico">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmprendimientoId" ColumnName="EmprendimientoId" />
+                <ScalarProperty Name="CategoriaPremiacionId" ColumnName="CategoriaPremiacionId" />
+                <ScalarProperty Name="FechaHora" ColumnName="FechaHora" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

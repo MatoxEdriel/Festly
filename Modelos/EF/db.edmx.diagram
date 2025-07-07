@@ -4,31 +4,37 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8ddc53547cc54177ad72c0007dc4573d" Name="Diagram1" ZoomLevel="63">
-        <EntityTypeShape EntityType="masterModel.AgendaPresentacion" Width="1.5" PointX="6" PointY="20.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.CategoriasPremiacion" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Emprendimiento" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Evento" Width="1.5" PointX="3.75" PointY="20.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Foto" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Participante" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Premiacione" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.PremiacionesEmprendimiento" Width="1.5" PointX="6.125" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Role" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Usuario" Width="1.5" PointX="8" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.Valoracione" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.MSreplication_options" Width="1.5" PointX="8.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.spt_fallback_db" Width="1.5" PointX="8.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.spt_fallback_dev" Width="1.5" PointX="10.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.spt_fallback_usg" Width="1.5" PointX="10.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.spt_monitor" Width="1.5" PointX="5.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="masterModel.spt_values" Width="1.5" PointX="10.75" PointY="9.5" IsExpanded="true" />
+      <Diagram DiagramId="492017ae1b0d4774b5adf4220b955484" Name="Diagram1">
+        <EntityTypeShape EntityType="masterModel.AgendaPresentacion" Width="1.5" PointX="6" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.CategoriasPremiacion" Width="1.5" PointX="3.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Emprendimiento" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Evento" Width="1.5" PointX="3.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Foto" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Participante" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Premiacione" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.PremiacionesCategoria" Width="1.5" PointX="6" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.PremiacionesEmprendimiento" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Role" Width="1.5" PointX="5.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Usuario" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.Valoracione" Width="1.5" PointX="3" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.VotosPublico" Width="1.5" PointX="6" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.MSreplication_options" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.spt_fallback_db" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.spt_fallback_dev" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.spt_fallback_usg" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.spt_monitor" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterModel.spt_values" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="masterModel.FK__AgendaPre__Event__38B96646" ManuallyRouted="false" />
         <AssociationConnector Association="masterModel.FK__Premiacio__Categ__4F9CCB9E" ManuallyRouted="false" />
+        <AssociationConnector Association="masterModel.FK__Premiacio__Categ__5FD33367" ManuallyRouted="false" />
+        <AssociationConnector Association="masterModel.FK__VotosPubl__Categ__546180BB" ManuallyRouted="false" />
         <AssociationConnector Association="masterModel.FK__Fotos__Emprendim__2E3BD7D3" ManuallyRouted="false" />
         <AssociationConnector Association="masterModel.FK__Participa__Empre__22CA2527" ManuallyRouted="false" />
         <AssociationConnector Association="masterModel.FK__Premiacio__Empre__2882FE7D" ManuallyRouted="false" />
         <AssociationConnector Association="masterModel.FK__Premiacio__Empre__4EA8A765" ManuallyRouted="false" />
+        <AssociationConnector Association="masterModel.FK__Premiacio__Empre__60C757A0" ManuallyRouted="false" />
         <AssociationConnector Association="masterModel.FK__Valoracio__Empre__2B5F6B28" ManuallyRouted="false" />
+        <AssociationConnector Association="masterModel.FK__VotosPubl__Empre__536D5C82" ManuallyRouted="false" />
         <AssociationConnector Association="masterModel.FK__Premiacio__Event__4DB4832C" ManuallyRouted="false" />
         <AssociationConnector Association="masterModel.FK__Usuarios__RolId__33F4B129" ManuallyRouted="false" />
       </Diagram>

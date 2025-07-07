@@ -21,7 +21,9 @@ namespace Modelos.EF
             this.Participantes = new HashSet<Participante>();
             this.Premiaciones = new HashSet<Premiacione>();
             this.PremiacionesEmprendimientoes = new HashSet<PremiacionesEmprendimiento>();
+            this.PremiacionesCategorias = new HashSet<PremiacionesCategoria>();
             this.Valoraciones = new HashSet<Valoracione>();
+            this.VotosPublicoes = new HashSet<VotosPublico>();
         }
     
         public int Id { get; set; }
@@ -40,6 +42,10 @@ namespace Modelos.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PremiacionesEmprendimiento> PremiacionesEmprendimientoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PremiacionesCategoria> PremiacionesCategorias { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Valoracione> Valoraciones { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VotosPublico> VotosPublicoes { get; set; }
     }
 }

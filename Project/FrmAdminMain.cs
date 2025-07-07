@@ -725,5 +725,15 @@ namespace Project
         {
 
         }
+
+        private void materialCard15_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void materialMultiLineTextBox21_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
