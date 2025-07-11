@@ -25,5 +25,13 @@ namespace Modelos.Emprendimiento
         }
 
 
+        public void agregar(PremiacionesCategoria premiacionesCategoria) {
+
+
+            _context.PremiacionesCategorias.Add(premiacionesCategoria);
+            _context.SaveChanges();
+
+        }   
+
     }
 }

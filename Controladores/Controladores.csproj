@@ -70,6 +70,7 @@
     <Compile Include="EmprendimientoController\EmprendimientoController.cs" />
     <Compile Include="EventoController\EventoController.cs" />
     <Compile Include="ParticipanteController\ParticipanteController.cs" />
+    <Compile Include="PremiacionController\PremiacionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ControllerTab\" />
+    <Folder Include="PremiacionCategoria\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -106,10 +106,16 @@ namespace Project
             this.pnlEmprendimientoCards = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPremiacion = new System.Windows.Forms.TabPage();
             this.materialCard12 = new MaterialSkin.Controls.MaterialCard();
+            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard13 = new MaterialSkin.Controls.MaterialCard();
+            this.btnGuardarCategorias = new FontAwesome.Sharp.IconButton();
+            this.txtObservacion = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.cmbEmprendimiento = new MaterialSkin.Controls.MaterialComboBox();
+            this.cmbCategoria = new MaterialSkin.Controls.MaterialComboBox();
             this.txtGanadores = new MaterialSkin.Controls.MaterialLabel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.materialCard16 = new MaterialSkin.Controls.MaterialCard();
+            this.tblPremiacion = new System.Windows.Forms.DataGridView();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -118,12 +124,6 @@ namespace Project
             this.Salir = new System.Windows.Forms.TabPage();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
-            this.cmbCategoria = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialMultiLineTextBox21 = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.materialTabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             this.materialCard6.SuspendLayout();
@@ -158,9 +158,9 @@ namespace Project
             this.materialCard12.SuspendLayout();
             this.materialCard13.SuspendLayout();
             this.materialCard16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPremiacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -1345,13 +1345,26 @@ namespace Project
             this.materialCard12.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard12.Size = new System.Drawing.Size(1035, 489);
             this.materialCard12.TabIndex = 0;
+            this.materialCard12.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard12_Paint);
+            // 
+            // materialLabel13
+            // 
+            this.materialLabel13.AutoSize = true;
+            this.materialLabel13.Depth = 0;
+            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel13.Location = new System.Drawing.Point(35, 167);
+            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel13.Name = "materialLabel13";
+            this.materialLabel13.Size = new System.Drawing.Size(169, 19);
+            this.materialLabel13.TabIndex = 6;
+            this.materialLabel13.Text = " PremiacionesCategoria";
             // 
             // materialCard13
             // 
             this.materialCard13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard13.Controls.Add(this.iconButton4);
-            this.materialCard13.Controls.Add(this.materialMultiLineTextBox21);
-            this.materialCard13.Controls.Add(this.materialComboBox1);
+            this.materialCard13.Controls.Add(this.btnGuardarCategorias);
+            this.materialCard13.Controls.Add(this.txtObservacion);
+            this.materialCard13.Controls.Add(this.cmbEmprendimiento);
             this.materialCard13.Controls.Add(this.cmbCategoria);
             this.materialCard13.Depth = 0;
             this.materialCard13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1360,8 +1373,96 @@ namespace Project
             this.materialCard13.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard13.Name = "materialCard13";
             this.materialCard13.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard13.Size = new System.Drawing.Size(804, 96);
+            this.materialCard13.Size = new System.Drawing.Size(1001, 96);
             this.materialCard13.TabIndex = 1;
+            this.materialCard13.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard13_Paint);
+            // 
+            // btnGuardarCategorias
+            // 
+            this.btnGuardarCategorias.FlatAppearance.BorderSize = 0;
+            this.btnGuardarCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGuardarCategorias.IconChar = FontAwesome.Sharp.IconChar.CircleCheck;
+            this.btnGuardarCategorias.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnGuardarCategorias.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardarCategorias.Location = new System.Drawing.Point(909, 29);
+            this.btnGuardarCategorias.Name = "btnGuardarCategorias";
+            this.btnGuardarCategorias.Size = new System.Drawing.Size(75, 52);
+            this.btnGuardarCategorias.TabIndex = 3;
+            this.btnGuardarCategorias.UseVisualStyleBackColor = true;
+            this.btnGuardarCategorias.Click += new System.EventHandler(this.iconButton4_Click);
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.AnimateReadOnly = false;
+            this.txtObservacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtObservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtObservacion.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtObservacion.Depth = 0;
+            this.txtObservacion.HideSelection = true;
+            this.txtObservacion.Location = new System.Drawing.Point(640, 31);
+            this.txtObservacion.MaxLength = 32767;
+            this.txtObservacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.PasswordChar = '\0';
+            this.txtObservacion.ReadOnly = false;
+            this.txtObservacion.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtObservacion.SelectedText = "";
+            this.txtObservacion.SelectionLength = 0;
+            this.txtObservacion.SelectionStart = 0;
+            this.txtObservacion.ShortcutsEnabled = true;
+            this.txtObservacion.Size = new System.Drawing.Size(250, 51);
+            this.txtObservacion.TabIndex = 2;
+            this.txtObservacion.TabStop = false;
+            this.txtObservacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtObservacion.UseSystemPasswordChar = false;
+            this.txtObservacion.Click += new System.EventHandler(this.materialMultiLineTextBox21_Click);
+            // 
+            // cmbEmprendimiento
+            // 
+            this.cmbEmprendimiento.AutoResize = false;
+            this.cmbEmprendimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbEmprendimiento.Depth = 0;
+            this.cmbEmprendimiento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbEmprendimiento.DropDownHeight = 174;
+            this.cmbEmprendimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmprendimiento.DropDownWidth = 121;
+            this.cmbEmprendimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbEmprendimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbEmprendimiento.FormattingEnabled = true;
+            this.cmbEmprendimiento.IntegralHeight = false;
+            this.cmbEmprendimiento.ItemHeight = 43;
+            this.cmbEmprendimiento.Location = new System.Drawing.Point(366, 33);
+            this.cmbEmprendimiento.MaxDropDownItems = 4;
+            this.cmbEmprendimiento.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbEmprendimiento.Name = "cmbEmprendimiento";
+            this.cmbEmprendimiento.Size = new System.Drawing.Size(220, 49);
+            this.cmbEmprendimiento.StartIndex = 0;
+            this.cmbEmprendimiento.TabIndex = 1;
+            this.cmbEmprendimiento.SelectedIndexChanged += new System.EventHandler(this.cmbEmprendimiento_SelectedIndexChanged);
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.AutoResize = false;
+            this.cmbCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbCategoria.Depth = 0;
+            this.cmbCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbCategoria.DropDownHeight = 174;
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.DropDownWidth = 121;
+            this.cmbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.IntegralHeight = false;
+            this.cmbCategoria.ItemHeight = 43;
+            this.cmbCategoria.Location = new System.Drawing.Point(21, 31);
+            this.cmbCategoria.MaxDropDownItems = 4;
+            this.cmbCategoria.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(310, 49);
+            this.cmbCategoria.StartIndex = 0;
+            this.cmbCategoria.TabIndex = 0;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // txtGanadores
             // 
@@ -1392,7 +1493,7 @@ namespace Project
             // materialCard16
             // 
             this.materialCard16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard16.Controls.Add(this.dataGridView1);
+            this.materialCard16.Controls.Add(this.tblPremiacion);
             this.materialCard16.Depth = 0;
             this.materialCard16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard16.Location = new System.Drawing.Point(17, 200);
@@ -1402,6 +1503,28 @@ namespace Project
             this.materialCard16.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard16.Size = new System.Drawing.Size(769, 269);
             this.materialCard16.TabIndex = 3;
+            this.materialCard16.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard16_Paint);
+            // 
+            // tblPremiacion
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblPremiacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.tblPremiacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.tblPremiacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.tblPremiacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblPremiacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblPremiacion.EnableHeadersVisualStyles = false;
+            this.tblPremiacion.GridColor = this.tblPremiacion.BackgroundColor;
+            this.tblPremiacion.Location = new System.Drawing.Point(14, 14);
+            this.tblPremiacion.Name = "tblPremiacion";
+            this.tblPremiacion.Size = new System.Drawing.Size(741, 241);
+            this.tblPremiacion.TabIndex = 10;
+            this.tblPremiacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblPremiacion_CellContentClick);
             // 
             // pictureBox4
             // 
@@ -1488,121 +1611,6 @@ namespace Project
             this.iconPictureBox1.TabStop = false;
             this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
-            // materialLabel13
-            // 
-            this.materialLabel13.AutoSize = true;
-            this.materialLabel13.Depth = 0;
-            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel13.Location = new System.Drawing.Point(35, 167);
-            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel13.Name = "materialLabel13";
-            this.materialLabel13.Size = new System.Drawing.Size(169, 19);
-            this.materialLabel13.TabIndex = 6;
-            this.materialLabel13.Text = " PremiacionesCategoria";
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.AutoResize = false;
-            this.cmbCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbCategoria.Depth = 0;
-            this.cmbCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbCategoria.DropDownHeight = 174;
-            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategoria.DropDownWidth = 121;
-            this.cmbCategoria.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.IntegralHeight = false;
-            this.cmbCategoria.ItemHeight = 43;
-            this.cmbCategoria.Location = new System.Drawing.Point(21, 31);
-            this.cmbCategoria.MaxDropDownItems = 4;
-            this.cmbCategoria.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(94, 49);
-            this.cmbCategoria.StartIndex = 0;
-            this.cmbCategoria.TabIndex = 0;
-            // 
-            // materialComboBox1
-            // 
-            this.materialComboBox1.AutoResize = false;
-            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox1.Depth = 0;
-            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox1.DropDownHeight = 174;
-            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox1.DropDownWidth = 121;
-            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.IntegralHeight = false;
-            this.materialComboBox1.ItemHeight = 43;
-            this.materialComboBox1.Location = new System.Drawing.Point(147, 31);
-            this.materialComboBox1.MaxDropDownItems = 4;
-            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(220, 49);
-            this.materialComboBox1.StartIndex = 0;
-            this.materialComboBox1.TabIndex = 1;
-            // 
-            // materialMultiLineTextBox21
-            // 
-            this.materialMultiLineTextBox21.AnimateReadOnly = false;
-            this.materialMultiLineTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialMultiLineTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialMultiLineTextBox21.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.materialMultiLineTextBox21.Depth = 0;
-            this.materialMultiLineTextBox21.HideSelection = true;
-            this.materialMultiLineTextBox21.Location = new System.Drawing.Point(402, 29);
-            this.materialMultiLineTextBox21.MaxLength = 32767;
-            this.materialMultiLineTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialMultiLineTextBox21.Name = "materialMultiLineTextBox21";
-            this.materialMultiLineTextBox21.PasswordChar = '\0';
-            this.materialMultiLineTextBox21.ReadOnly = false;
-            this.materialMultiLineTextBox21.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.materialMultiLineTextBox21.SelectedText = "";
-            this.materialMultiLineTextBox21.SelectionLength = 0;
-            this.materialMultiLineTextBox21.SelectionStart = 0;
-            this.materialMultiLineTextBox21.ShortcutsEnabled = true;
-            this.materialMultiLineTextBox21.Size = new System.Drawing.Size(250, 51);
-            this.materialMultiLineTextBox21.TabIndex = 2;
-            this.materialMultiLineTextBox21.TabStop = false;
-            this.materialMultiLineTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMultiLineTextBox21.UseSystemPasswordChar = false;
-            this.materialMultiLineTextBox21.Click += new System.EventHandler(this.materialMultiLineTextBox21_Click);
-            // 
-            // dataGridView1
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = this.dataGridView1.BackgroundColor;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 17);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(735, 235);
-            this.dataGridView1.TabIndex = 10;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.CircleCheck;
-            this.iconButton4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(708, 27);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(75, 52);
-            this.iconButton4.TabIndex = 3;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            // 
             // FrmAdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1660,9 +1668,9 @@ namespace Project
             this.materialCard12.PerformLayout();
             this.materialCard13.ResumeLayout(false);
             this.materialCard16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tblPremiacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1756,9 +1764,9 @@ namespace Project
         private MaterialSkin.Controls.MaterialLabel txtGanadores;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
         private MaterialSkin.Controls.MaterialComboBox cmbCategoria;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox2 materialMultiLineTextBox21;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
-        private DataGridView dataGridView1;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacion;
+        private MaterialSkin.Controls.MaterialComboBox cmbEmprendimiento;
+        private DataGridView tblPremiacion;
+        private FontAwesome.Sharp.IconButton btnGuardarCategorias;
     }
 }

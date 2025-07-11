@@ -107,6 +107,9 @@
     <Compile Include="EF\Premiacione.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\PremiacionesCategoria.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\PremiacionesEmprendimiento.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
@@ -134,9 +137,14 @@
     <Compile Include="EF\Valoracione.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\VotosPublico.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
     <Compile Include="Persistencia\AgendaRepository.cs" />
+    <Compile Include="Persistencia\CategoriaRepository.cs" />
     <Compile Include="Persistencia\EmprendimientoRepository.cs" />
     <Compile Include="Persistencia\EventoRepositorio.cs" />
+    <Compile Include="Persistencia\PremiacionesCategoria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

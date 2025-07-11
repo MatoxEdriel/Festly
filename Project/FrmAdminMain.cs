@@ -17,6 +17,7 @@ using Controladores.ParticipanteController;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using Modelos.EF;
+using Modelos.Persistencia;
 using Project.task;
 
 
@@ -35,6 +36,7 @@ namespace Project
         private readonly EmprendimientoController _controllerEmprendimiento;
         private readonly AgendaController _agendaController;   
         private readonly EventoController _eventoController;
+        private readonly PremiacionesCategoriaRepository _premiacionCategoriaController;
 
 
 
@@ -53,6 +55,7 @@ namespace Project
             _controllerEmprendimiento = new EmprendimientoController();
             _agendaController = new AgendaController();
             _eventoController = new EventoController();
+            _premiacionCategoriaController = new PremiacionesCategoriaRepository();
 
             ImprimirTagsDeCards(pnlConfiguracion2);
 
@@ -127,6 +130,30 @@ namespace Project
             dateHourOut.Format = DateTimePickerFormat.Custom;
             dateHourOut.CustomFormat = "HH:mm tt";
             dateHourOut.ShowUpDown = true;
+
+
+            var categoriaRepo = new Modelos.Persistencia.CategoriaRepository();
+            var categorias = categoriaRepo.GetAll();
+
+
+
+
+
+
+            var emprendimientos = _controllerEmprendimiento.ObtenerTodos();
+
+
+
+
+            this.cmbEmprendimiento.DataSource = emprendimientos;
+            this.cmbEmprendimiento.DisplayMember = "Nombre";
+            this.cmbEmprendimiento.ValueMember = "Id";
+
+
+            this.cmbCategoria.DataSource = categorias;
+            this.cmbCategoria.DisplayMember = "Nombre";
+            this.cmbCategoria.ValueMember = "Id";
+
 
 
 
@@ -332,6 +359,9 @@ namespace Project
                 _controllerEmprendimiento.registrarEmprendimiento(nombre, facultad, rubro, descripcion, logo);
                 MessageBox.Show("¡Emprendimiento registrado exitosamente!");
                 CargarEmprendimiento();
+                //OPTIMIZAR EL CARGADO DE COMPONENTES POR CMB
+                CargarComboEmprendimientos();
+                CargarPremiacionesCategoria();
                 limpiarTextField(this);
          
                 imgLogo.Image = null;
@@ -341,6 +371,26 @@ namespace Project
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+
+
+
+        private void CargarComboEmprendimientos()
+        {
+            var emprendimientos = _controllerEmprendimiento.ObtenerTodos();
+
+            cmbEmprendimiento.DataSource = null; 
+            cmbEmprendimiento.Items.Clear();    
+            cmbEmprendimiento.DataSource = emprendimientos;
+            cmbEmprendimiento.DisplayMember = "Nombre";
+            cmbEmprendimiento.ValueMember = "Id";
+        }
+
+
+
+
+
+
 
         private void txtMain_Click(object sender, EventArgs e)
         {
@@ -451,17 +501,41 @@ namespace Project
           
         }
 
+
+        private void CargarPremiacionesCategoria() {
+
+            var lstPremiaciones = _premiacionCategoriaController.GetAll();
+            tblPremiacion.DataSource  = lstPremiaciones.Select(p => new
+            {
+                Categoria = p.CategoriasPremiacion.Nombre,
+                Emprendimiento = p.Emprendimiento.Nombre, 
+                Observaciones = p.Observaciones
+            }).ToList();
+
+            tblPremiacion.Dock = DockStyle.Fill;
+            tblPremiacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tblPremiacion.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            tblPremiacion.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+
+        }
+
+
+
         private void CargarEmprendimiento() {
-
             var lstEmprendimiento = _controllerEmprendimiento.ObtenerTodos();
-       
-
             tableEmprendimiento.DataSource = lstEmprendimiento.Select(e => new
             {
                 e.Nombre,
                 e.Facultad,
                 e.Rubro
             }).ToList();
+
+
+
+            //Arreglar ma;ana 
+
+
             /*  Implementar esto cuando sea el momento xd 
              *       lstBoxEmprendimiento.Items.Clear();
             var lista = await Task.Run(() => _controllerEmprendimiento.ObtenerTodos());
@@ -732,6 +806,68 @@ namespace Project
         }
 
         private void materialMultiLineTextBox21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbEmprendimiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            int categoriaId = (int)cmbCategoria.SelectedValue;
+            int emprendimientoId = (int)cmbEmprendimiento.SelectedValue;
+            string observacion = txtObservacion.Text.Trim();
+
+
+           if (string.IsNullOrWhiteSpace(observacion))
+            {
+                MessageBox.Show("Por favor completa el campo de observación.");
+                return;
+            }
+
+
+            _premiacionCategoriaController.agregar(new Modelos.EF.PremiacionesCategoria
+            {
+                CategoriaId = categoriaId,
+                EmprendimientoId = emprendimientoId,
+                Observaciones = observacion
+            });
+
+            MessageBox.Show("Premiación registrada correctamente.");
+
+            CargarPremiacionesCategoria();
+
+
+
+
+
+
+        }
+
+        private void materialCard12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tblPremiacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void materialCard16_Paint(object sender, PaintEventArgs e)
+        {
+            CargarPremiacionesCategoria();
+        }
+
+        private void materialCard13_Paint(object sender, PaintEventArgs e)
         {
 
         }
