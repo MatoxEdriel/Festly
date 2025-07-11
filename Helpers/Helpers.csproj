@@ -50,6 +50,10 @@
       <Project>{2b41086a-96b3-4b81-98ae-4b46656accf1}</Project>
       <Name>Modelos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Project\Vista.csproj">
+      <Project>{47371e49-9916-4519-aaae-a000fa5e8624}</Project>
+      <Name>Vista</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

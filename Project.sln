@@ -13,7 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{D298C18E-1983-47DF-A243-4760D399AE03}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\..\Pictures\festly.png = ..\..\..\..\..\Pictures\festly.png
+		..\..\..\..\Pictures\festly.png = ..\..\..\..\Pictures\festly.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{83EC37DB-2DDD-45A0-A5FC-A759347F8587}"
+	ProjectSection(SolutionItems) = preProject
+		ExportToPdf.cs = ExportToPdf.cs
 	EndProjectSection
 EndProject
 Global

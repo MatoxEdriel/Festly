@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 using Controladores.AgendaController;
 using Controladores.EmprendimientoController;
@@ -16,9 +10,9 @@ using Controladores.EventoController;
 using Controladores.ParticipanteController;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using Modelos.EF;
 using Modelos.Persistencia;
-using Project.task;
+using Project.Utils;
+
 
 
 
@@ -354,7 +348,7 @@ namespace Project
 
             try
             {
-             
+
                 Image logo = imgLogo.Image;
                 _controllerEmprendimiento.registrarEmprendimiento(nombre, facultad, rubro, descripcion, logo);
                 MessageBox.Show("¡Emprendimiento registrado exitosamente!");
@@ -870,6 +864,22 @@ namespace Project
         private void materialCard13_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivos PDF|*.pdf";
+            saveFileDialog.Title = "Guardar DataGridView como PDF";
+            saveFileDialog.FileName = "Reporte.pdf";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                var exportador = new ToPdf();
+               exportador.ExportarDataGridViewAPdf(tblPremiacion, saveFileDialog.FileName);
+            }
         }
     }
 }
