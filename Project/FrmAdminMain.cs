@@ -12,6 +12,8 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using Modelos.Persistencia;
 using Project.Utils;
+using Microsoft.VisualBasic;
+
 
 
 
@@ -148,9 +150,34 @@ namespace Project
             this.cmbCategoria.DisplayMember = "Nombre";
             this.cmbCategoria.ValueMember = "Id";
 
+            tableEmprendimiento.CellClick += TableEmprendimiento_CellClick;
 
 
 
+        }
+
+
+        private void TableEmprendimiento_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var row = tableEmprendimiento.Rows[e.RowIndex];
+
+            if (tableEmprendimiento.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                tableEmprendimiento.Rows.RemoveAt(e.RowIndex); // Solo visual
+            }
+
+            if (tableEmprendimiento.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                string nuevoNombre = Interaction.InputBox("Nuevo nombre:", "Editar Emprendimiento", row.Cells["Nombre"].Value.ToString());
+
+
+                if (!string.IsNullOrWhiteSpace(nuevoNombre))
+                {
+                    row.Cells["Nombre"].Value = nuevoNombre;
+                }
+            }
         }
 
         private void guardarOrdenPresentacion(int evento) {
@@ -496,22 +523,22 @@ namespace Project
         }
 
 
-        private void CargarPremiacionesCategoria() {
 
+        private void CargarPremiacionesCategoria()
+        {
             var lstPremiaciones = _premiacionCategoriaController.GetAll();
-            tblPremiacion.DataSource  = lstPremiaciones.Select(p => new
+
+            tblPremiacion.DataSource = lstPremiaciones.Select(p => new
             {
-                Categoria = p.CategoriasPremiacion.Nombre,
-                Emprendimiento = p.Emprendimiento.Nombre, 
-                Observaciones = p.Observaciones
+                Categoria = p.CategoriasPremiacion?.Nombre ?? "Sin categoría",
+                Emprendimiento = p.Emprendimiento?.Nombre ?? "Sin emprendimiento",
+                Observaciones = p.Observaciones ?? ""
             }).ToList();
 
             tblPremiacion.Dock = DockStyle.Fill;
             tblPremiacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tblPremiacion.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             tblPremiacion.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
-
         }
 
 
@@ -524,6 +551,32 @@ namespace Project
                 e.Facultad,
                 e.Rubro
             }).ToList();
+
+            // Elimina columnas anteriores si existen para evitar duplicados
+            if (!tableEmprendimiento.Columns.Contains("Editar"))
+            {
+                var btnEditar = new DataGridViewButtonColumn
+                {
+                    Name = "Editar",
+                    HeaderText = "Editar",
+                    Text = "✏️",
+                    UseColumnTextForButtonValue = true
+                };
+                tableEmprendimiento.Columns.Add(btnEditar);
+            }
+
+            if (!tableEmprendimiento.Columns.Contains("Eliminar"))
+            {
+                var btnEliminar = new DataGridViewButtonColumn
+                {
+                    Name = "Eliminar",
+                    HeaderText = "Eliminar",
+                    Text = "🗑️",
+                    UseColumnTextForButtonValue = true
+                };
+                tableEmprendimiento.Columns.Add(btnEliminar);
+            }
+
 
 
 
