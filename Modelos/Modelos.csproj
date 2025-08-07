@@ -144,6 +144,7 @@
     <Compile Include="Persistencia\CategoriaRepository.cs" />
     <Compile Include="Persistencia\EmprendimientoRepository.cs" />
     <Compile Include="Persistencia\EventoRepositorio.cs" />
+    <Compile Include="Persistencia\ParticipanteRepository.cs" />
     <Compile Include="Persistencia\PremiacionesCategoria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

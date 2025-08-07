@@ -80,6 +80,8 @@ namespace Project
 
             CargarEmprendimientosComoCards();
 
+            CargarParticipantesComoCards();
+
             //FlowLayout de por si tiene una coleccion es decir pnlConfiguracion2.controls 
             pnlConfiguracion2.AllowDrop = true;
             pnlConfiguracion2.FlowDirection = FlowDirection.TopDown;
@@ -265,6 +267,7 @@ namespace Project
             pnlBienvenida.Controls.Add(frameBienvenida);
 
             CargarEmprendimientosComoCards();
+            CargarParticipantesComoCards();
 
         }
 
@@ -380,8 +383,8 @@ namespace Project
                 _controllerEmprendimiento.registrarEmprendimiento(nombre, facultad, rubro, descripcion, logo);
                 MessageBox.Show("¡Emprendimiento registrado exitosamente!");
                 CargarEmprendimiento();
-                //OPTIMIZAR EL CARGADO DE COMPONENTES POR CMB
                 CargarComboEmprendimientos();
+                CargarParticipantesComoCards();
                 CargarPremiacionesCategoria();
                 limpiarTextField(this);
          
@@ -639,6 +642,74 @@ namespace Project
             }
         }
 
+        private void CargarParticipantesComoCards() {
+            pnlCardParticipante.Controls.Clear();
+            var listaParticipante = _participante.ObtenerTodos();
+
+
+            foreach (var participante in listaParticipante) {
+
+                var card = new MaterialSkin.Controls.MaterialCard {
+                    Width = 260,
+                    Height = 75,
+                    Margin  = new Padding(10),
+                    BackColor = Color.WhiteSmoke,
+                    Padding = new Padding(5),
+                    Tag = participante.Id
+                };
+                var pnlContenidoParticipante = new TableLayoutPanel
+                {
+                    Dock = DockStyle.Fill,
+                    ColumnCount = 2,
+                    RowCount = 1
+                };
+                pnlContenidoParticipante.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40));
+                pnlContenidoParticipante.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60));
+                pnlContenidoParticipante.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+
+
+                var pictureBox = new PictureBox
+                {
+                    Dock = DockStyle.Fill,
+                    SizeMode = PictureBoxSizeMode.Zoom,
+                    Image = ConvertirBytesAImagen(participante.PhotoBinary)
+                };
+
+                var label = new Label
+                {
+                    Text = $"Nombre: {participante.primerNombre}\nApellido: {participante.apellidoPaterno}\n:Cargo {participante.Cargo}",
+                    Dock = DockStyle.Fill,
+                    Font = new Font("Segoe UI", 8, FontStyle.Bold),
+                    Padding = new Padding(10),
+                    TextAlign = ContentAlignment.MiddleLeft
+                };
+
+
+                pnlContenidoParticipante.Controls.Add(pictureBox, 0, 0);
+                pnlContenidoParticipante.Controls.Add(label, 1, 0);
+
+                card.Controls.Add(pnlContenidoParticipante);
+
+                //Aquiiii 
+                pnlCardParticipante.Controls.Add(card);
+
+                var currentCard = card;
+                HabilitarDragEnControl(card, currentCard);
+
+                currentCard.MouseDown += (s, e) =>
+                {
+                    if (e.Button == MouseButtons.Left)
+                    {
+                        Console.WriteLine("Iniciando arrastre de tarjeta...");
+                        currentCard.DoDragDrop(currentCard, DragDropEffects.Move);
+                    }
+                };
+
+
+            }
+        }
+
+      
 
         private void CargarEmprendimientosComoCards()
         {
@@ -662,18 +733,6 @@ namespace Project
                     Padding = new Padding(5),
                     Tag = emp.Id
                 };
-
-                
-
-            
-
-
-
-
-
-
-
-
                 var panelContenido = new TableLayoutPanel
                 {
                     Dock = DockStyle.Fill,
@@ -933,6 +992,16 @@ namespace Project
                 var exportador = new ToPdf();
                exportador.ExportarDataGridViewAPdf(tblPremiacion, saveFileDialog.FileName);
             }
+        }
+
+        private void materialCard14_Paint(object sender, PaintEventArgs e)
+        {
+            //Aqui podremos mostrar la cantidad cargar Participants 
+
+
+
+
+
         }
     }
 }

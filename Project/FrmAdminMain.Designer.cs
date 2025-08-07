@@ -32,8 +32,8 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.pnlBienvenida = new System.Windows.Forms.Panel();
@@ -71,8 +71,6 @@ namespace Project
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.registrarParticipante = new System.Windows.Forms.TabPage();
             this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lstBoxParticipante = new MaterialSkin.Controls.MaterialListBox();
             this.txtSegundoApellido = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtSegundoNombre = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtPrimerApellido = new MaterialSkin.Controls.MaterialTextBox2();
@@ -124,6 +122,7 @@ namespace Project
             this.Salir = new System.Windows.Forms.TabPage();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.pnlCardParticipante = new MaterialSkin.Controls.MaterialCard();
             this.materialTabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             this.materialCard6.SuspendLayout();
@@ -143,7 +142,6 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.registrarParticipante.SuspendLayout();
             this.materialCard7.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.materialCard8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCamara)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogoParticipante)).BeginInit();
@@ -498,13 +496,13 @@ namespace Project
             // 
             // tableEmprendimiento
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableEmprendimiento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableEmprendimiento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tableEmprendimiento.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tableEmprendimiento.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.tableEmprendimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -740,7 +738,7 @@ namespace Project
             // materialCard7
             // 
             this.materialCard7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard7.Controls.Add(this.panel1);
+            this.materialCard7.Controls.Add(this.pnlCardParticipante);
             this.materialCard7.Controls.Add(this.txtSegundoApellido);
             this.materialCard7.Controls.Add(this.txtSegundoNombre);
             this.materialCard7.Controls.Add(this.txtPrimerApellido);
@@ -761,30 +759,6 @@ namespace Project
             this.materialCard7.Size = new System.Drawing.Size(1550, 731);
             this.materialCard7.TabIndex = 9;
             this.materialCard7.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard7_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lstBoxParticipante);
-            this.panel1.Location = new System.Drawing.Point(1176, 45);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(318, 428);
-            this.panel1.TabIndex = 11;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
-            // 
-            // lstBoxParticipante
-            // 
-            this.lstBoxParticipante.BackColor = System.Drawing.Color.White;
-            this.lstBoxParticipante.BorderColor = System.Drawing.Color.LightGray;
-            this.lstBoxParticipante.Depth = 0;
-            this.lstBoxParticipante.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lstBoxParticipante.Location = new System.Drawing.Point(26, 31);
-            this.lstBoxParticipante.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lstBoxParticipante.Name = "lstBoxParticipante";
-            this.lstBoxParticipante.SelectedIndex = -1;
-            this.lstBoxParticipante.SelectedItem = null;
-            this.lstBoxParticipante.Size = new System.Drawing.Size(273, 346);
-            this.lstBoxParticipante.TabIndex = 10;
-            this.lstBoxParticipante.SelectedIndexChanged += new MaterialSkin.Controls.MaterialListBox.SelectedIndexChangedEventHandler(this.materialListBox2_SelectedIndexChanged);
             // 
             // txtSegundoApellido
             // 
@@ -1503,13 +1477,13 @@ namespace Project
             // 
             // tblPremiacion
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblPremiacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblPremiacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tblPremiacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tblPremiacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.tblPremiacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1603,6 +1577,20 @@ namespace Project
             this.iconPictureBox1.TabStop = false;
             this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
+            // pnlCardParticipante
+            // 
+            this.pnlCardParticipante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlCardParticipante.Depth = 0;
+            this.pnlCardParticipante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnlCardParticipante.Location = new System.Drawing.Point(984, 28);
+            this.pnlCardParticipante.Margin = new System.Windows.Forms.Padding(14);
+            this.pnlCardParticipante.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pnlCardParticipante.Name = "pnlCardParticipante";
+            this.pnlCardParticipante.Padding = new System.Windows.Forms.Padding(14);
+            this.pnlCardParticipante.Size = new System.Drawing.Size(511, 643);
+            this.pnlCardParticipante.TabIndex = 19;
+            this.pnlCardParticipante.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard14_Paint);
+            // 
             // FrmAdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1642,7 +1630,6 @@ namespace Project
             this.registrarParticipante.ResumeLayout(false);
             this.materialCard7.ResumeLayout(false);
             this.materialCard7.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.materialCard8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconCamara)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogoParticipante)).EndInit();
@@ -1698,7 +1685,6 @@ namespace Project
         private MaterialSkin.Controls.MaterialCard materialCard8;
         private PictureBox imgLogoParticipante;
         private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialListBox lstBoxParticipante;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private TabPage Home;
         private Panel pnlBienvenida;
@@ -1718,7 +1704,6 @@ namespace Project
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
-        private Panel panel1;
         private DataGridView tableEmprendimiento;
         private FlowLayoutPanel pnlEmprendimientos;
         private MaterialSkin.Controls.MaterialTextBox2 txtSegundoApellido;
@@ -1759,5 +1744,6 @@ namespace Project
         private MaterialSkin.Controls.MaterialComboBox cmbEmprendimiento;
         private DataGridView tblPremiacion;
         private FontAwesome.Sharp.IconButton btnGuardarCategorias;
+        private MaterialSkin.Controls.MaterialCard pnlCardParticipante;
     }
 }

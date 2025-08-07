@@ -7,13 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Modelos.EF;
+using Modelos.Persistencia;
 
 namespace Controladores.ParticipanteController
 {
     public class ParticipanteController
     {
 
+        private ParticipanteRepository _repo;
+        public ParticipanteController() { 
+        
+           _repo = new ParticipanteRepository();
+        }
 
+
+        public List<Participante> ObtenerTodos() {
+            return _repo.GetAll();
+
+        }
 
 
         public byte[] ConvertirImagenABytes(System.Drawing.Image imagen)
