@@ -32,8 +32,9 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdminMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.pnlBienvenida = new System.Windows.Forms.Panel();
@@ -122,7 +123,7 @@ namespace Project
             this.Salir = new System.Windows.Forms.TabPage();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.pnlCardParticipante = new MaterialSkin.Controls.MaterialCard();
+            this.pnlCardParticipante = new System.Windows.Forms.FlowLayoutPanel();
             this.materialTabControl1.SuspendLayout();
             this.Home.SuspendLayout();
             this.materialCard6.SuspendLayout();
@@ -496,13 +497,13 @@ namespace Project
             // 
             // tableEmprendimiento
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableEmprendimiento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableEmprendimiento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.tableEmprendimiento.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tableEmprendimiento.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.tableEmprendimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -713,7 +714,7 @@ namespace Project
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Image = global::Project.Properties.Resources.emprendimiento;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(18, 18);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
@@ -1002,11 +1003,11 @@ namespace Project
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::Project.Properties.Resources.register21;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(297, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1228, 726);
+            this.pictureBox1.Size = new System.Drawing.Size(1235, 726);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -1232,7 +1233,7 @@ namespace Project
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Image = global::Project.Properties.Resources.p1__1_;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(402, 35);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
@@ -1477,13 +1478,13 @@ namespace Project
             // 
             // tblPremiacion
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblPremiacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblPremiacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tblPremiacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tblPremiacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.tblPremiacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1500,7 +1501,7 @@ namespace Project
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Project.Properties.Resources.premios2_0;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(807, 37);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox4.Name = "pictureBox4";
@@ -1579,17 +1580,12 @@ namespace Project
             // 
             // pnlCardParticipante
             // 
-            this.pnlCardParticipante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pnlCardParticipante.Depth = 0;
-            this.pnlCardParticipante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pnlCardParticipante.Location = new System.Drawing.Point(984, 28);
-            this.pnlCardParticipante.Margin = new System.Windows.Forms.Padding(14);
-            this.pnlCardParticipante.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pnlCardParticipante.AutoScroll = true;
+            this.pnlCardParticipante.Location = new System.Drawing.Point(990, 46);
             this.pnlCardParticipante.Name = "pnlCardParticipante";
-            this.pnlCardParticipante.Padding = new System.Windows.Forms.Padding(14);
-            this.pnlCardParticipante.Size = new System.Drawing.Size(511, 643);
+            this.pnlCardParticipante.Size = new System.Drawing.Size(526, 626);
             this.pnlCardParticipante.TabIndex = 19;
-            this.pnlCardParticipante.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard14_Paint);
+            this.pnlCardParticipante.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCardParticipante_Paint);
             // 
             // FrmAdminMain
             // 
@@ -1744,6 +1740,6 @@ namespace Project
         private MaterialSkin.Controls.MaterialComboBox cmbEmprendimiento;
         private DataGridView tblPremiacion;
         private FontAwesome.Sharp.IconButton btnGuardarCategorias;
-        private MaterialSkin.Controls.MaterialCard pnlCardParticipante;
+        private FlowLayoutPanel pnlCardParticipante;
     }
 }

@@ -384,7 +384,7 @@ namespace Project
                 MessageBox.Show("¡Emprendimiento registrado exitosamente!");
                 CargarEmprendimiento();
                 CargarComboEmprendimientos();
-                CargarParticipantesComoCards();
+           
                 CargarPremiacionesCategoria();
                 limpiarTextField(this);
          
@@ -460,6 +460,8 @@ namespace Project
                 MessageBox.Show("Usuario registrado uwu ");
                 limpiarTextField(this);
                 imgLogoParticipante.Image = null;
+
+                CargarParticipantesComoCards();
             }
             catch (Exception ex) {
 
@@ -643,8 +645,14 @@ namespace Project
         }
 
         private void CargarParticipantesComoCards() {
+
             pnlCardParticipante.Controls.Clear();
+        
+
+
             var listaParticipante = _participante.ObtenerTodos();
+
+
 
 
             foreach (var participante in listaParticipante) {
@@ -1001,6 +1009,11 @@ namespace Project
 
 
 
+
+        }
+
+        private void pnlCardParticipante_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
